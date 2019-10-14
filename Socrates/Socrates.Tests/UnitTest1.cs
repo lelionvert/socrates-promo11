@@ -25,8 +25,18 @@ namespace Socrates.Tests
         {
             var checkin = new CheckIn();
 
-            Check.That(checkin.time.Hour)
-                .IsBefore(21);
+            Check.That(checkin.IsLate()).IsEqualTo(false);
+        }
+
+        [Test]
+        public void CheckInHourAfter_9_PM()
+        {
+            var time = new System.DateTime()
+                .AddHours(21)
+                .AddSeconds(1);
+            var checkin = new CheckIn(time);
+
+            Check.That(checkin.IsLate()).IsEqualTo(true);
         }
     }
 }
