@@ -8,9 +8,11 @@
     ".NETCoreApp,Version=v3.0": {
       "Socrates.Tests/1.0.0": {
         "dependencies": {
+          "Library": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.2.0",
-          "NUnit3TestAdapter": "3.13.0",
-          "NUnit": "3.12.0"
+          "NFluent": "2.6.0",
+          "NUnit": "3.12.0",
+          "NUnit3TestAdapter": "3.15.1"
         },
         "runtime": {
           "Socrates.Tests.dll": {}
@@ -385,6 +387,14 @@
           }
         }
       },
+      "NFluent/2.6.0": {
+        "runtime": {
+          "lib/netstandard2.0/NFluent.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "NUnit/3.12.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.0"
@@ -396,7 +406,7 @@
           }
         }
       },
-      "NUnit3TestAdapter/3.13.0": {
+      "NUnit3TestAdapter/3.15.1": {
         "dependencies": {
           "Microsoft.DotNet.InternalAbstractions": "1.0.0",
           "System.ComponentModel.EventBasedAsync": "4.3.0",
@@ -1007,6 +1017,11 @@
             "fileVersion": "4.6.24705.1"
           }
         }
+      },
+      "Library/1.0.0": {
+        "runtime": {
+          "Library.dll": {}
+        }
       }
     }
   },
@@ -1100,6 +1115,13 @@
       "path": "newtonsoft.json/9.0.1",
       "hashPath": "newtonsoft.json.9.0.1.nupkg.sha512"
     },
+    "NFluent/2.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LV6KcMpSPqVbeziXkPjcPFHrnIVB3VjisQ3Osw2Z60mV5ERxLV+Xtfb8+JUoV6I4zYWusj9mw3tpYe524V8H9w==",
+      "path": "nfluent/2.6.0",
+      "hashPath": "nfluent.2.6.0.nupkg.sha512"
+    },
     "NUnit/3.12.0": {
       "type": "package",
       "serviceable": true,
@@ -1107,12 +1129,12 @@
       "path": "nunit/3.12.0",
       "hashPath": "nunit.3.12.0.nupkg.sha512"
     },
-    "NUnit3TestAdapter/3.13.0": {
+    "NUnit3TestAdapter/3.15.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-9OlA81APTyR/tNkapK2a2dlz4jFra7/Bm1eYT1P1lIq2cJv4OYtWD5uHj3XsO1dz3btiwbIFrWBtZNr/ebRhSw==",
-      "path": "nunit3testadapter/3.13.0",
-      "hashPath": "nunit3testadapter.3.13.0.nupkg.sha512"
+      "sha512": "sha512-gqy0llGjhJYq9ebFvtbmBcF/MY8z5kcTIxYs+eXwp2d4Ntha8pSPxUzryvBm7H46VbWI6FS5/XNbxwiQpe88vQ==",
+      "path": "nunit3testadapter/3.15.1",
+      "hashPath": "nunit3testadapter.3.15.1.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",
@@ -1519,6 +1541,11 @@
       "sha512": "sha512-A/uxsWi/Ifzkmd4ArTLISMbfFs6XpRPsXZonrIqyTY70xi8t+mDtvSM5Os0RqyRDobjMBwIDHDL4NOIbkDwf7A==",
       "path": "system.xml.xpath.xmldocument/4.3.0",
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
+    },
+    "Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
