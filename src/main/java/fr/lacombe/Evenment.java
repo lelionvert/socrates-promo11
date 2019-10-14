@@ -19,8 +19,9 @@ public class Evenment {
     }
 
     public boolean checkColdMeal(Date date) throws ParseException {
-        SimpleDateFormat formatDate = new SimpleDateFormat ("HH:mm");
-        if(date.before(formatDate.parse("21:01"))) return false;
+        SimpleDateFormat formatDate = new SimpleDateFormat ("yyyy-MM-dd HH:mm");
+        if(date.after(formatDate.parse("2019-10-18 01:59"))) return false;
+        if(date.before(formatDate.parse("2019-10-17 21:01"))) return false;
         return true;
     }
 }
