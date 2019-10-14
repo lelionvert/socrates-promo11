@@ -1,12 +1,15 @@
 package fr.lacombe;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class Evenment {
 
-    private final List<String> participants;
+    private final List<Date> participants;
 
-    public Evenment(List<String> participants) {
+    public Evenment(List<Date> participants) {
 
         this.participants = participants;
     }
@@ -15,8 +18,9 @@ public class Evenment {
         return participants.size();
     }
 
-    public boolean checkColdMeal(String s) {
-        if(s == "20") return false;
+    public boolean checkColdMeal(Date date) throws ParseException {
+        SimpleDateFormat formatDate = new SimpleDateFormat ("HH:mm");
+        if(date.equals(formatDate.parse("20:00"))) return false;
         return true;
     }
 }

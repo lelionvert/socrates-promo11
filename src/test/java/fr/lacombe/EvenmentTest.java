@@ -3,7 +3,10 @@ package fr.lacombe;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,22 +18,22 @@ public class EvenmentTest
     public void number_participants_equals_0()
     {
         // Given
-        Evenment theEvent = new Evenment(new ArrayList<String>());
+        Evenment theEvent = new Evenment(new ArrayList<Date>());
 
         // When / Then
         Assertions.assertThat(theEvent.countParticipants()).isEqualTo(0);
     }
 
     @Test
-    public void number_participants_equals_5()
-    {
+    public void number_participants_equals_5() throws ParseException {
         // Given
-        List<String> listParticipants = new ArrayList<String>();
-        listParticipants.add("08");
-        listParticipants.add("09");
-        listParticipants.add("10");
-        listParticipants.add("11");
-        listParticipants.add("00");
+        SimpleDateFormat formatDate = new SimpleDateFormat ("HH:mm");
+        List<Date> listParticipants = new ArrayList<Date>();
+        listParticipants.add(formatDate.parse("20:00"));
+        listParticipants.add(formatDate.parse("21:00"));
+        listParticipants.add(formatDate.parse("22:00"));
+        listParticipants.add(formatDate.parse("23:00"));
+        listParticipants.add(formatDate.parse("00:00"));
 
         Evenment theEvent = new Evenment(listParticipants);
 
@@ -39,15 +42,15 @@ public class EvenmentTest
     }
 
     @Test
-    public void check_cold_meal_for_22h_is_true()
-    {
+    public void check_cold_meal_for_22h_is_true() throws ParseException {
         // Given
-        List<String> listParticipants = new ArrayList<String>();
-        listParticipants.add("20");
-        listParticipants.add("21");
-        listParticipants.add("22");
-        listParticipants.add("23");
-        listParticipants.add("00");
+        SimpleDateFormat formatDate = new SimpleDateFormat ("HH:mm");
+        List<Date> listParticipants = new ArrayList<Date>();
+        listParticipants.add(formatDate.parse("20:00"));
+        listParticipants.add(formatDate.parse("21:00"));
+        listParticipants.add(formatDate.parse("22:00"));
+        listParticipants.add(formatDate.parse("23:00"));
+        listParticipants.add(formatDate.parse("00:00"));
 
         Evenment theEvent = new Evenment(listParticipants);
 
@@ -56,15 +59,15 @@ public class EvenmentTest
     }
 
     @Test
-    public void check_cold_meal_for_20h_is_false()
-    {
+    public void check_cold_meal_for_20h_is_false() throws ParseException {
         // Given
-        List<String> listParticipants = new ArrayList<String>();
-        listParticipants.add("20");
-        listParticipants.add("21");
-        listParticipants.add("22");
-        listParticipants.add("23");
-        listParticipants.add("00");
+        SimpleDateFormat formatDate = new SimpleDateFormat ("HH:mm");
+        List<Date> listParticipants = new ArrayList<Date>();
+        listParticipants.add(formatDate.parse("20:00"));
+        listParticipants.add(formatDate.parse("21:00"));
+        listParticipants.add(formatDate.parse("22:00"));
+        listParticipants.add(formatDate.parse("23:00"));
+        listParticipants.add(formatDate.parse("00:00"));
 
         Evenment theEvent = new Evenment(listParticipants);
 
