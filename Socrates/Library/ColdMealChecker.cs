@@ -6,7 +6,12 @@ namespace Library
 {
     public class ColdMealChecker
     {
-        DateTime Deadline = new DateTime(2019, 1, 1, 21, 0, 0);
+        DateTime Deadline;
+
+        public ColdMealChecker(DateTime deadline)
+        {
+            Deadline = deadline;
+        }
 
         public int ColdMealNumber(List<CheckIn> checkIns)
         {
@@ -14,7 +19,8 @@ namespace Library
 
             foreach (var checkIn in checkIns)
             {
-                coldMeals += checkIn.IsLate(Deadline) ? 1 : 0;
+                if (checkIn.IsLate(Deadline) && checkIn.IsThursday())
+                    coldMeals++;
             }
             return coldMeals;
         }
