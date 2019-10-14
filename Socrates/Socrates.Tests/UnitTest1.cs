@@ -52,7 +52,7 @@ namespace Socrates.Tests
         }
 
         [Test]
-        public void CheckIfTodayIsThursday()
+        public void CheckIfCheckInIsForThursday()
         {
             //datetime setted on thursday
             var datetime = new DateTime(2003, 5, 1);
@@ -60,6 +60,17 @@ namespace Socrates.Tests
 
             Check.That(checkin.IsThursday())
                 .IsEqualTo(true);
+        }
+
+        [Test]
+        public void CheckIfCheckInIsNotForThursday()
+        {
+            //datetime setted on friday
+            var datetime = new DateTime(2003, 5, 2);
+            var checkin = new CheckIn(datetime);
+
+            Check.That(checkin.IsThursday())
+                .IsEqualTo(false);
         }
     }
 }
