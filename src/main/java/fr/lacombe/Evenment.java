@@ -16,6 +16,7 @@ public class Evenment {
     }
 
     public boolean checkColdMeal(String s) {
+        if(s == "20") return false;
         return true;
     }
 }
