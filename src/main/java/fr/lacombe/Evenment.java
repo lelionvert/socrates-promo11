@@ -4,16 +4,15 @@ import java.util.List;
 
 public class Evenment {
 
-    private final int i;
+    private final List<String> participants;
 
-    public Evenment(int i) {
+    public Evenment(List<String> participants) {
 
-        this.i = i;
+        this.participants = participants;
     }
 
     public int countParticipants() {
-        if (i==5) return 5;
-        return 0;
+        return participants.size();
     }
 
 }
