@@ -2,11 +2,11 @@ package fr.lacombe;
 
 import java.util.List;
 
-public class Evenment {
+public class Event {
 
     private final List<Participant> participants;
 
-    public Evenment(List<Participant> participants) {
+    public Event(List<Participant> participants) {
         this.participants = participants;
     }
 
