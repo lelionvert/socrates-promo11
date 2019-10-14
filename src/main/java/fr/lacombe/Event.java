@@ -15,6 +15,11 @@ public class Event {
     }
 
     public int countColdMeals() {
+        for(Participant participant : participants) {
+            if(participant.checkColdMeal()) {
+                return 1;
+            }
+        }
         return 0;
     }
 }
