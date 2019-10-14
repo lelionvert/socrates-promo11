@@ -18,7 +18,7 @@ public class EvenmentTest
     public void list_participants_is_empty()
     {
         // Given
-        Evenment theEvent = new Evenment(new ArrayList<Date>());
+        Evenment theEvent = new Evenment(new ArrayList<Participant>());
 
         // When / Then
         Assertions.assertThat(theEvent.countParticipants()).isEqualTo(0);
@@ -28,9 +28,9 @@ public class EvenmentTest
     public void list_participants_is_not_empty() throws ParseException {
         // Given
         SimpleDateFormat formatDate = new SimpleDateFormat ("yyyy-MM-dd HH:mm");
-        List<Date> listParticipants = new ArrayList<Date>();
-        listParticipants.add(formatDate.parse("2019-10-17 20:00"));
-        listParticipants.add(formatDate.parse("2019-10-17 21:00"));
+        List<Participant> listParticipants = new ArrayList<Participant>();
+        listParticipants.add(new Participant(formatDate.parse("2019-10-17 20:00")));
+        listParticipants.add(new Participant(formatDate.parse("2019-10-17 21:00")));
 
         Evenment theEvent = new Evenment(listParticipants);
 
@@ -42,39 +42,33 @@ public class EvenmentTest
     public void cold_meal_for_person_arriving_late() throws ParseException {
         // Given
         SimpleDateFormat formatDate = new SimpleDateFormat ("yyyy-MM-dd HH:mm");
-        List<Date> listParticipants = new ArrayList<Date>();
-        listParticipants.add(formatDate.parse("2019-10-17 22:00"));
-
-        Evenment theEvent = new Evenment(listParticipants);
+        List<Participant> listParticipants = new ArrayList<Participant>();
+        listParticipants.add(new Participant(formatDate.parse("2019-10-17 22:00")) );
 
         // When / Then
-        Assertions.assertThat(theEvent.checkColdMeal(listParticipants.get(0))).isTrue();
+        Assertions.assertThat(listParticipants.get(0).checkColdMeal()).isTrue();
     }
 
     @Test
     public void not_cold_meal_for_person_arriving_early() throws ParseException {
         // Given
         SimpleDateFormat formatDate = new SimpleDateFormat ("yyyy-MM-dd HH:mm");
-        List<Date> listParticipants = new ArrayList<Date>();
-        listParticipants.add(formatDate.parse("2019-10-17 21:00"));
-
-        Evenment theEvent = new Evenment(listParticipants);
+        List<Participant> listParticipants = new ArrayList<Participant>();
+        listParticipants.add(new Participant(formatDate.parse("2019-10-17 21:00")) );
 
         // When / Then
-        Assertions.assertThat(theEvent.checkColdMeal(listParticipants.get(0))).isFalse();
+        Assertions.assertThat(listParticipants.get(0).checkColdMeal()).isFalse();
     }
 
     @Test
     public void no_meal_for_person_arriving_too_late() throws ParseException {
         // Given
         SimpleDateFormat formatDate = new SimpleDateFormat ("yyyy-MM-dd HH:mm");
-        List<Date> listParticipants = new ArrayList<Date>();
-        listParticipants.add(formatDate.parse("2019-10-18 02:00"));
-
-        Evenment theEvent = new Evenment(listParticipants);
+        List<Participant> listParticipants = new ArrayList<Participant>();
+        listParticipants.add(new Participant(formatDate.parse("2019-10-18 02:00")) );
 
         // When / Then
-        Assertions.assertThat(theEvent.checkColdMeal(listParticipants.get(0))).isFalse();
+        Assertions.assertThat(listParticipants.get(0).checkColdMeal()).isFalse();
     }
 
 }
