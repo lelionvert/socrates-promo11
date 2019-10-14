@@ -14,4 +14,7 @@ public class Event {
         return participants.size();
     }
 
+    public int countColdMeals() {
+        return 0;
+    }
 }
