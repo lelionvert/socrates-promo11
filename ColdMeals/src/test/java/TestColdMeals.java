@@ -6,18 +6,10 @@ import java.time.LocalDateTime;
 public class TestColdMeals {
 
     @Test
-    public void cold_meal_individual_returns_true_when_arrival_before_9_pm(){
+    public void cold_meal_attendant_returns_true_when_arrival_before_9_pm_at_5_am(){
         Attendant attendant = new Attendant(LocalDateTime.of(2019,10,17,5,0));
-        Assertions.assertThat(attendant.getColdMeal()).isTrue();
+        Assertions.assertThat(attendant.hasColdMeal()).isFalse();
     }
 
-    private class Attendant {
-        public Attendant(LocalDateTime arrivalDateTime) {
 
-        }
-
-        public boolean getColdMeal() {
-            return true;
-        }
-    }
 }
