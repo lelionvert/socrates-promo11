@@ -16,4 +16,10 @@ public class TestColdMeals {
         Attendant attendant = new Attendant(LocalDateTime.of(2019,10,17,23,0));
         Assertions.assertThat(attendant.hasColdMeal()).isTrue();
     }
+
+    @Test
+    public void cold_meal_attendant_returns_true_when_arrival_after_9_pm_at_11_30_pm() {
+        Attendant attendant = new Attendant(LocalDateTime.of(2019,10,17,23,30));
+        Assertions.assertThat(attendant.hasColdMeal()).isTrue();
+    }
 }
