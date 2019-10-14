@@ -54,12 +54,22 @@ public class TestColdMeals {
     }
 
     @Test
-    public void count_cold_meals_returns_2_when_3_attendants_two_arrive_at_10_pm_and_one_arrives_at_8_pm() {
+    public void count_cold_meals_returns_2_when_2_attendants_arrive_at_10_pm_and_1_arrives_at_8_pm() {
         List<Attendant> attendantList = new ArrayList<>();
         attendantList.add(new Attendant(LocalDateTime.of(2019, 10, 17, 22, 0)));
         attendantList.add(new Attendant(LocalDateTime.of(2019, 10, 17, 22, 0)));
         attendantList.add(new Attendant(LocalDateTime.of(2019, 10, 17, 20, 0)));
 
         Assertions.assertThat(Attendant.countColdMeals(attendantList)).isEqualTo(2);
+    }
+
+    @Test
+    public void count_cold_meals_returns_3_when_3_attendants_arrive_at_10_pm() {
+        List<Attendant> attendantList = new ArrayList<>();
+        attendantList.add(new Attendant(LocalDateTime.of(2019, 10, 17, 22, 0)));
+        attendantList.add(new Attendant(LocalDateTime.of(2019, 10, 17, 22, 0)));
+        attendantList.add(new Attendant(LocalDateTime.of(2019, 10, 17, 22, 0)));
+
+        Assertions.assertThat(Attendant.countColdMeals(attendantList)).isEqualTo(3);
     }
 }

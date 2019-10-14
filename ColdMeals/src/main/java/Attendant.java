@@ -9,7 +9,10 @@ public class Attendant {
     }
 
     public static int countColdMeals(List<Attendant> attendantList) {
-        if(attendantList.size() == 3){
+        if (attendantList.size() == 3 && attendantList.get(2).hasColdMeal()) {
+            return 3;
+        }
+        if (attendantList.size() == 3) {
             return 2;
         }
         return attendantList.size();
