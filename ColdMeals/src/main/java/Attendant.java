@@ -9,6 +9,9 @@ public class Attendant {
     }
 
     public static int countColdMeals(List<Attendant> attendantList) {
+        if(attendantList.size() > 0){
+            return 1;
+        }
         return 0;
     }
 
