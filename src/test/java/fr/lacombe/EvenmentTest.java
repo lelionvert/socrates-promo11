@@ -6,10 +6,10 @@ import org.junit.Test;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class EvenmentTest
 {
     @Test
-    public void shouldAnswerWithTrue()
+    public void number_participants_equals_0()
     {
         Evenment theEvent = new Evenment();
         Assertions.assertThat(theEvent.countParticipants()).isEqualTo(0);
