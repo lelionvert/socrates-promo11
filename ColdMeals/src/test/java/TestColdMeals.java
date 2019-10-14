@@ -93,4 +93,12 @@ public class TestColdMeals {
 
         Assertions.assertThat(Attendant.countColdMeals(attendantList)).isEqualTo(1);
     }
+
+    @Test
+    public void error_message_returns_error_when_single_attendant_with_no_arrival_date_time() {
+        List<Attendant> attendantList = new ArrayList<>();
+        attendantList.add(new Attendant(null));
+
+        Assertions.assertThat(Attendant.errorMessage()).isEqualTo("Be careful Attendant without date !");
+    }
 }
