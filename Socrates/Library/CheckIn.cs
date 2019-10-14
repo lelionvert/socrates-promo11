@@ -17,9 +17,7 @@ namespace Library
 
         public bool IsLate()
         {
-            if (Time.Hour >= 21 && (Time.Minute > 0 || Time.Second > 0))
-                return true;
-            return false;
+            return Time.Hour >= 21 && (Time.Minute > 0 || Time.Second > 0);
         }
     }
 }
