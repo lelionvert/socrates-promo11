@@ -2,6 +2,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -42,5 +43,13 @@ public class TestColdMeals {
         List<Attendant> attendantSingleton = Collections.singletonList(
                 new Attendant(LocalDateTime.of(2019, 10, 17, 22, 0)));
         Assertions.assertThat(Attendant.countColdMeals(attendantSingleton)).isEqualTo(1);
+    }
+
+    @Test
+    public void count_cold_meals_returns_2_when_2_attendants_one_arriving_at_10_pm_the_other_at_11_pm() {
+        List<Attendant> attendantList = new ArrayList<>();
+        attendantList.add(new Attendant(LocalDateTime.of(2019, 10, 17, 22, 0)));
+        attendantList.add(new Attendant(LocalDateTime.of(2019, 10, 17, 22, 0)));
+        Assertions.assertThat(Attendant.countColdMeals(attendantList)).isEqualTo(2);
     }
 }
