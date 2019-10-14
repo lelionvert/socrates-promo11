@@ -2,11 +2,11 @@ package fr.lacombe;
 
 import java.util.List;
 
-public class Event {
+public class SocratesEvent {
 
     private final List<Participant> participants;
 
-    public Event(List<Participant> participants) {
+    public SocratesEvent(List<Participant> participants) {
         this.participants = participants;
     }
 
@@ -15,11 +15,12 @@ public class Event {
     }
 
     public int countColdMeals() {
+        int numberColdMeals = 0;
         for(Participant participant : participants) {
             if(participant.checkColdMeal()) {
-                return 1;
+                numberColdMeals ++;
             }
         }
-        return 0;
+        return numberColdMeals;
     }
 }

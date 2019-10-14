@@ -6,15 +6,15 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventTest {
+public class SocratesEventTest {
 
     @Test
     public void list_participants_is_empty() {
         // Given
-        Event theEvent = new Event(new ArrayList<Participant>());
+        SocratesEvent theSocratesEvent = new SocratesEvent(new ArrayList<Participant>());
 
         // When / Then
-        Assertions.assertThat(theEvent.countParticipants()).isEqualTo(0);
+        Assertions.assertThat(theSocratesEvent.countParticipants()).isEqualTo(0);
     }
 
     @Test
@@ -24,10 +24,10 @@ public class EventTest {
         listParticipants.add(new Participant("2019-10-17 20:00"));
         listParticipants.add(new Participant("2019-10-17 21:00"));
 
-        Event theEvent = new Event(listParticipants);
+        SocratesEvent theSocratesEvent = new SocratesEvent(listParticipants);
 
         // When / Then
-        Assertions.assertThat(theEvent.countParticipants()).isEqualTo(2);
+        Assertions.assertThat(theSocratesEvent.countParticipants()).isEqualTo(2);
     }
 
     @Test
@@ -37,10 +37,10 @@ public class EventTest {
         listParticipants.add(new Participant("2019-10-17 20:00"));
         listParticipants.add(new Participant("2019-10-17 21:00"));
 
-        Event theEvent = new Event(listParticipants);
+        SocratesEvent theSocratesEvent = new SocratesEvent(listParticipants);
 
         // When / Then
-        Assertions.assertThat(theEvent.countColdMeals()).isEqualTo(0);
+        Assertions.assertThat(theSocratesEvent.countColdMeals()).isEqualTo(0);
     }
 
     @Test
@@ -50,10 +50,10 @@ public class EventTest {
         listParticipants.add(new Participant("2019-10-17 20:00"));
         listParticipants.add(new Participant("2019-10-17 21:01"));
 
-        Event theEvent = new Event(listParticipants);
+        SocratesEvent theSocratesEvent = new SocratesEvent(listParticipants);
 
         // When / Then
-        Assertions.assertThat(theEvent.countColdMeals()).isEqualTo(1);
+        Assertions.assertThat(theSocratesEvent.countColdMeals()).isEqualTo(1);
     }
 
 }
