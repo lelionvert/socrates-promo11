@@ -75,4 +75,21 @@ public class EvenmentTest
         Assertions.assertThat(theEvent.checkColdMeal(listParticipants.get(0))).isFalse();
     }
 
+    @Test
+    public void check_cold_meal_for_21h_is_false() throws ParseException {
+        // Given
+        SimpleDateFormat formatDate = new SimpleDateFormat ("HH:mm");
+        List<Date> listParticipants = new ArrayList<Date>();
+        listParticipants.add(formatDate.parse("20:00"));
+        listParticipants.add(formatDate.parse("21:00"));
+        listParticipants.add(formatDate.parse("22:00"));
+        listParticipants.add(formatDate.parse("23:00"));
+        listParticipants.add(formatDate.parse("00:00"));
+
+        Evenment theEvent = new Evenment(listParticipants);
+
+        // When / Then
+        Assertions.assertThat(theEvent.checkColdMeal(listParticipants.get(1))).isFalse();
+    }
+
 }
