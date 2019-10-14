@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using NFluent;
 using Library;
+using System;
 
 namespace Socrates.Tests
 {
@@ -48,6 +49,17 @@ namespace Socrates.Tests
             var checkin = new CheckIn(time);
 
             Check.That(checkin.IsLate()).IsEqualTo(true);
+        }
+
+        [Test]
+        public void CheckIfTodayIsThursday()
+        {
+            //datetime setted on thursday
+            var datetime = new DateTime(2003, 5, 1);
+            var checkin = new CheckIn(datetime);
+
+            Check.That(checkin.IsThursday())
+                .IsEqualTo(true);
         }
     }
 }

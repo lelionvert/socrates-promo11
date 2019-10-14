@@ -19,5 +19,10 @@ namespace Library
         {
             return Time.Hour >= 21 && (Time.Minute > 0 || Time.Second > 0);
         }
+
+        public bool IsThursday()
+        {
+            return Time.DayOfWeek == System.DayOfWeek.Thursday;
+        }
     }
 }
