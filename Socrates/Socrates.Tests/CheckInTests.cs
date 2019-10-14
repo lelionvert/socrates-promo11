@@ -24,31 +24,37 @@ namespace Socrates.Tests
         [Test]
         public void CheckInHourBefore_9_PM()
         {
+            var deadline = new DateTime(2019, 1, 1, 21, 0, 0);
+            var time = new DateTime()
+                .AddHours(21)
+                .AddSeconds(1);
             var checkin = new CheckIn();
 
-            Check.That(checkin.IsLate()).IsEqualTo(false);
+            Check.That(checkin.IsLate(deadline)).IsEqualTo(false);
         }
 
         [Test]
         public void CheckInHourAfter_9_PM()
         {
-            var time = new System.DateTime()
+            var deadline = new DateTime(2019, 1, 1, 21, 0, 0);
+            var time = new DateTime()
                 .AddHours(21)
                 .AddSeconds(1);
             var checkin = new CheckIn(time);
 
-            Check.That(checkin.IsLate()).IsEqualTo(true);
+            Check.That(checkin.IsLate(deadline)).IsEqualTo(true);
         }
 
         [Test]
         public void CheckInHourAfter_21H_01MIN()
         {
-            var time = new System.DateTime()
+            var deadline = new DateTime(2019, 1, 1, 21, 0, 0);
+            var time = new DateTime()
                 .AddHours(21)
                 .AddMinutes(1);
             var checkin = new CheckIn(time);
 
-            Check.That(checkin.IsLate()).IsEqualTo(true);
+            Check.That(checkin.IsLate(deadline)).IsEqualTo(true);
         }
 
         [Test]
