@@ -8,10 +8,6 @@ namespace Socrates.Tests
     [TestFixture]
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
 
         [Test]
         public void CheckInExists()
@@ -43,6 +39,17 @@ namespace Socrates.Tests
             var checkin = new CheckIn(time);
 
             Check.That(checkin.IsLate(deadline)).IsEqualTo(true);
+        }
+
+        [Test]
+        public void CheckInAt_9_PM()
+        {
+            var deadline = new DateTime(2019, 1, 1, 21, 0, 0);
+            var time = new DateTime()
+                .AddHours(21);
+            var checkin = new CheckIn(time);
+
+            Check.That(checkin.IsLate(deadline)).IsEqualTo(false);
         }
 
         [Test]
