@@ -2,6 +2,8 @@ import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.List;
 
 public class TestColdMeals {
 
@@ -27,5 +29,11 @@ public class TestColdMeals {
     public void cold_meal_attendant_returns_true_when_arrival_after_9_pm_at_10_pm() {
         Attendant attendant = new Attendant(LocalDateTime.of(2019,10,17,22,00));
         Assertions.assertThat(attendant.hasColdMeal()).isTrue();
+    }
+
+    @Test
+    public void count_cold_meal_returns_0_when_empty_list_of_attendants() {
+        List<Attendant> attendantList = Collections.emptyList();
+        Assertions.assertThat(Attendant.countColdMeals(attendantList)).isEqualTo(0);
     }
 }
