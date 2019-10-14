@@ -1,7 +1,5 @@
 package fr.lacombe;
 
-import static org.junit.Assert.assertTrue;
-
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
@@ -10,13 +8,11 @@ import org.junit.Test;
  */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
     @Test
     public void shouldAnswerWithTrue()
     {
-        Assertions.assertThat( true ).isEqualTo(true);
+        Evenment theEvent = new Evenment();
+        Assertions.assertThat(theEvent.countParticipants()).isEqualTo(0);
     }
 
 
