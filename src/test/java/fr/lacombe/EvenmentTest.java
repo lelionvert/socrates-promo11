@@ -38,4 +38,21 @@ public class EvenmentTest
         Assertions.assertThat(theEvent.countParticipants()).isEqualTo(5);
     }
 
+    @Test
+    public void check_cold_meal_for_22h_is_true()
+    {
+        // Given
+        List<String> listParticipants = new ArrayList<String>();
+        listParticipants.add("20");
+        listParticipants.add("21");
+        listParticipants.add("22");
+        listParticipants.add("23");
+        listParticipants.add("00");
+
+        Evenment theEvent = new Evenment(listParticipants);
+
+        // When / Then
+        Assertions.assertThat(theEvent.checkColdMeal(listParticipants.get(2))).isTrue();
+    }
+
 }

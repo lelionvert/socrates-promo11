@@ -15,4 +15,7 @@ public class Evenment {
         return participants.size();
     }
 
+    public boolean checkColdMeal(String s) {
+        return true;
+    }
 }
