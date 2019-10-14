@@ -20,8 +20,7 @@ public class Evenment {
 
     public boolean checkColdMeal(Date date) throws ParseException {
         SimpleDateFormat formatDate = new SimpleDateFormat ("HH:mm");
-        if(date.equals(formatDate.parse("20:00"))) return false;
-        if(date.equals(formatDate.parse("21:00"))) return false;
+        if(date.before(formatDate.parse("21:01"))) return false;
         return true;
     }
 }
