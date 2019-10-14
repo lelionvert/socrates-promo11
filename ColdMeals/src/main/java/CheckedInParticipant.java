@@ -1,13 +1,13 @@
 import java.time.LocalDateTime;
 
-public class Participant {
+public class CheckedInParticipant {
     private final LocalDateTime checkInDateTime;
 
-    public Participant(LocalDateTime checkInDateTime) {
+    public CheckedInParticipant(LocalDateTime checkInDateTime) {
         this.checkInDateTime = checkInDateTime;
     }
 
-    public boolean arrivedAfter(LocalDateTime arrivalDate) {
+    public boolean checkedInAfter(LocalDateTime arrivalDate) {
         return checkInDateTime.isAfter(arrivalDate);
     }
 }
