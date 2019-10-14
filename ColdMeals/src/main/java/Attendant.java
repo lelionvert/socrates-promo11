@@ -13,7 +13,7 @@ public class Attendant {
         return attendantList.stream().filter(Attendant::hasColdMeal).count();
     }
 
-    public static String errorMessage() {
+    public static String errorMessage(List<Attendant> attendantList) {
         return "Be careful Attendant without date !";
     }
 

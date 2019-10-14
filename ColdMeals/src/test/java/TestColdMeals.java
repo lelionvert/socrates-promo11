@@ -99,6 +99,6 @@ public class TestColdMeals {
         List<Attendant> attendantList = new ArrayList<>();
         attendantList.add(new Attendant(null));
 
-        Assertions.assertThat(Attendant.errorMessage()).isEqualTo("Be careful Attendant without date !");
+        Assertions.assertThat(Attendant.errorMessage(attendantList)).isEqualTo("Be careful Attendant without date !");
     }
 }
