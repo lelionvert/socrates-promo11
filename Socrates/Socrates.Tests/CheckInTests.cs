@@ -30,18 +30,6 @@ namespace Socrates.Tests
         }
 
         [Test]
-        public void CheckInHourAfter_9_PM()
-        {
-            var deadline = new DateTime(2019, 1, 1, 21, 0, 0);
-            var time = new DateTime()
-                .AddHours(21)
-                .AddSeconds(1);
-            var checkin = new CheckIn(time);
-
-            Check.That(checkin.IsLate(deadline)).IsEqualTo(true);
-        }
-
-        [Test]
         public void CheckInAt_9_PM()
         {
             var deadline = new DateTime(2019, 1, 1, 21, 0, 0);
@@ -53,12 +41,12 @@ namespace Socrates.Tests
         }
 
         [Test]
-        public void CheckInHourAfter_21H_01MIN()
+        public void CheckInHourAfter_9_PM()
         {
             var deadline = new DateTime(2019, 1, 1, 21, 0, 0);
             var time = new DateTime()
                 .AddHours(21)
-                .AddMinutes(1);
+                .AddSeconds(1);
             var checkin = new CheckIn(time);
 
             Check.That(checkin.IsLate(deadline)).IsEqualTo(true);
