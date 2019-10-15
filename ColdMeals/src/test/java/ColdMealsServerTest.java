@@ -110,4 +110,15 @@ public class ColdMealsServerTest {
         Assertions.assertThat(ColdMealsServer.countColdMeals(checkedInParticipantList)).isEqualTo(1);
     }
 
+    @Test
+    public void count_cold_meals_returns_1_for_late_participant_for_given_limit_date() {
+        LocalDateTime limitDate = LocalDateTime.of(2020,10,22,21,0);
+        ColdMealsServer coldMealsServer = new ColdMealsServer(limitDate);
+
+        List<CheckedInParticipant> checkedInParticipants = new ArrayList<>();
+        checkedInParticipants.add(new CheckedInParticipant(LocalDateTime.of(2020,10,22,23,0)));
+        checkedInParticipants.add(new CheckedInParticipant(LocalDateTime.of(2020,10,22,20,0)));
+
+        Assertions.assertThat(coldMealsServer.countColdMealsParameterized(checkedInParticipants)).isEqualTo(1);
+    }
 }
