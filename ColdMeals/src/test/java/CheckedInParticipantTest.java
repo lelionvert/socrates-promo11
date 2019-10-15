@@ -24,14 +24,8 @@ public class CheckedInParticipantTest {
     }
 
     @Test
-    public void build_correct_checked_in_participant_when_string_given_in_parameter_bis() {
-        CheckedInParticipant checkedInParticipant = new CheckedInParticipant("2019-10-17 20h05");
-        Assertions.assertThat(checkedInParticipant.getCheckInDateTime()).isEqualTo(LocalDateTime.of(2019,10,17,20,5));
-    }
-
-    @Test
-    public void build_correct_checked_in_participant_when_string_given_in_parameter_terce() {
-        CheckedInParticipant checkedInParticipant = new CheckedInParticipant("2019-10-17 19h59");
-        Assertions.assertThat(checkedInParticipant.getCheckInDateTime()).isEqualTo(LocalDateTime.of(2019,10,17,19,59));
+    public void build_checked_in_participant_with_null_check_in_time_when_wrong_format_string_given() {
+        CheckedInParticipant checkedInParticipant = new CheckedInParticipant("2019-10-17-20-05");
+        Assertions.assertThat(checkedInParticipant.getCheckInDateTime()).isNull();
     }
 }

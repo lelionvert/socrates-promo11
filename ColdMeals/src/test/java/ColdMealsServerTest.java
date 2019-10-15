@@ -96,7 +96,7 @@ public class ColdMealsServerTest {
         ColdMealsServer coldMealsServer = new ColdMealsServer(LocalDateTime.of(2019,10,17,21,0));
 
         List<CheckedInParticipant> checkedInParticipantList = new ArrayList<>();
-        checkedInParticipantList.add(new CheckedInParticipant(null));
+        checkedInParticipantList.add(new CheckedInParticipant((LocalDateTime) null));
 
         Assertions.assertThat(coldMealsServer.errorMessage(checkedInParticipantList)).isEqualTo("Be careful Attendant without date !");
     }
