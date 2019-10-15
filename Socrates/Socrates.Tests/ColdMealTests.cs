@@ -62,5 +62,15 @@ namespace Socrates.Tests
 
             Check.That(coldMealCheker.Deadline).IsEqualTo(expectedDate);
         }
+
+        [Test]
+        public void InputNullStringDoesNotSetColdMealCheckerDeadline()
+        {
+            String inputDate = null;
+            var expectedDate = new DateTime();
+            var coldMealCheker = new ColdMealChecker(inputDate);
+
+            Check.That(coldMealCheker.Deadline).IsEqualTo(expectedDate);
+        }
     }
 }

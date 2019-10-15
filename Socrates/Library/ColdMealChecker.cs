@@ -18,8 +18,9 @@ namespace Library
                 Deadline = DateTime.ParseExact(deadline, "yyyy-MM-dd HH\\hmm",
                     System.Globalization.CultureInfo.InvariantCulture
                 );
-            } catch (FormatException) { 
-            }
+            } 
+            catch (FormatException) {} 
+            catch (ArgumentNullException) {}
         }
 
         public int ColdMealNumber(List<CheckIn> checkIns)
