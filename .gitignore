@@ -1,3 +1,4 @@
 .vs/
-./Socrates/Socrates.Tests/bin/
-./Socrates/Socrates.Tests/obj/
+Socrates
+Socrates/Socrates.Tests/bin/
+Socrates/Socrates.Tests/obj/

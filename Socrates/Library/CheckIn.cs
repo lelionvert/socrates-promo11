@@ -17,7 +17,9 @@ namespace Library
 
         public bool IsLate(DateTime limitTime)
         {
-            return Time.Hour >= limitTime.Hour && (Time.Minute > limitTime.Minute || Time.Second > limitTime.Second);
+            return Time.Hour > limitTime.Hour
+                || (Time.Hour == limitTime.Hour
+                && (Time.Minute > limitTime.Minute|| Time.Second > limitTime.Second));
         }
 
         public bool IsThursday()

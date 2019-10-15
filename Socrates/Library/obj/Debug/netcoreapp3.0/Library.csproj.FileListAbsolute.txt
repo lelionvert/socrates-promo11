@@ -1,8 +1,0 @@
-C:\Users\lenovo 3\source\repos\socrates-promo11\Socrates\Library\bin\Debug\netcoreapp3.0\Library.deps.json
-C:\Users\lenovo 3\source\repos\socrates-promo11\Socrates\Library\bin\Debug\netcoreapp3.0\Library.dll
-C:\Users\lenovo 3\source\repos\socrates-promo11\Socrates\Library\bin\Debug\netcoreapp3.0\Library.pdb
-C:\Users\lenovo 3\source\repos\socrates-promo11\Socrates\Library\obj\Debug\netcoreapp3.0\Library.AssemblyInfoInputs.cache
-C:\Users\lenovo 3\source\repos\socrates-promo11\Socrates\Library\obj\Debug\netcoreapp3.0\Library.AssemblyInfo.cs
-C:\Users\lenovo 3\source\repos\socrates-promo11\Socrates\Library\obj\Debug\netcoreapp3.0\Library.dll
-C:\Users\lenovo 3\source\repos\socrates-promo11\Socrates\Library\obj\Debug\netcoreapp3.0\Library.pdb
-C:\Users\lenovo 3\source\repos\socrates-promo11\Socrates\Library\obj\Debug\netcoreapp3.0\Library.csprojAssemblyReference.cache

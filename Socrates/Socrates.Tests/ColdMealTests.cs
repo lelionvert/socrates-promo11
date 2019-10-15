@@ -29,5 +29,19 @@ namespace Socrates.Tests
             Check.That(coldMealChecker.ColdMealNumber(checkInList)).IsEqualTo(0);
         }
 
+        [Test]
+        public void ListDoesContain_3_ColdMeals()
+        {
+            var checkInList = new List<CheckIn>();
+
+            checkInList.Add(new CheckIn());
+            checkInList.Add(new CheckIn(Deadline.AddHours(1)));
+            checkInList.Add(new CheckIn(Deadline.AddMinutes(1)));
+            checkInList.Add(new CheckIn(Deadline.AddSeconds(1)));
+
+            var coldMealChecker = new ColdMealChecker(Deadline);
+            Check.That(coldMealChecker.ColdMealNumber(checkInList)).IsEqualTo(3);
+        }
+
     }
 }
