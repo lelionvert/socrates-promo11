@@ -19,6 +19,7 @@ public class CheckedInParticipantTest {
 
     @Test
     public void build_correct_checked_in_participant_when_string_given_in_parameter() {
+
         CheckedInParticipant checkedInParticipant = new CheckedInParticipant("2019-10-17 21h05");
         Assertions.assertThat(checkedInParticipant.getCheckInDateTime()).isEqualTo(LocalDateTime.of(2019,10,17,21,5));
     }
@@ -26,6 +27,12 @@ public class CheckedInParticipantTest {
     @Test
     public void build_checked_in_participant_with_null_check_in_time_when_wrong_format_string_given() {
         CheckedInParticipant checkedInParticipant = new CheckedInParticipant("2019-10-17-20-05");
+        Assertions.assertThat(checkedInParticipant.getCheckInDateTime()).isNull();
+    }
+
+    @Test
+    public void builder_creates_correct_checked_in_participant_when_string_given_in_parameter() {
+        CheckedInParticipant checkedInParticipant = CheckedInParticipantBuilder.create("2019-10-17-20-05");
         Assertions.assertThat(checkedInParticipant.getCheckInDateTime()).isNull();
     }
 }
