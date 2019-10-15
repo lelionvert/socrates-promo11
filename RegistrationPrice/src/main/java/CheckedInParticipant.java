@@ -9,4 +9,8 @@ public class CheckedInParticipant {
     public ChoiceAccomodation getChoice() {
         return choice;
     }
+
+    public int getBasicChoicePrice() {
+        return choice.getPrice();
+    }
 }

@@ -1,14 +1,13 @@
 import java.time.DayOfWeek;
 
-public class RegistrationDate {
+class RegistrationDate {
     private final DayOfWeek dayOfWeek;
 
-    public RegistrationDate(DayOfWeek dayOfWeek, int hour, int minutes) {
-
+    RegistrationDate(DayOfWeek dayOfWeek, int hour, int minutes) {
         this.dayOfWeek = dayOfWeek;
     }
 
-    public DayOfWeek getDay() {
+    DayOfWeek getDay() {
         return dayOfWeek;
     }
 }
