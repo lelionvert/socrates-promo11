@@ -69,6 +69,19 @@ public class SocratesEventTest {
         Assertions.assertThat(theSocratesEvent.countColdMeals()).isEqualTo(1);
     }
 
+    @Test
+    public void new_date_cold_meal_bis() {
+        // Given
+        List<CheckIn> listCheckIns = new ArrayList<CheckIn>();
+        listCheckIns.add(new CheckIn("2021-10-22 20:00"));
+        listCheckIns.add(new CheckIn("2021-10-22 21:00"));
+
+        SocratesEvent theSocratesEvent = new SocratesEvent(listCheckIns, new ColdMealChecker("2021-10-22 21:01", "2021-10-23 01:59"));
+
+        // When / Then
+        Assertions.assertThat(theSocratesEvent.countColdMeals()).isEqualTo(0);
+    }
+
 
 
 }
