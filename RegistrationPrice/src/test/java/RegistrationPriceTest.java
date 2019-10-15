@@ -41,4 +41,9 @@ public class RegistrationPriceTest {
 
         assertThat(pierre.getChoice()).isEqualTo(ChoiceAccomodation.TRIPLE);
     }
+
+    @Test
+    void get_price_from_accomodation_choice() {
+        assertThat(ChoiceAccomodation.TRIPLE.getPrice()).isEqualTo(410);
+    }
 }
