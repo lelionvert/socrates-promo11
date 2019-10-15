@@ -1,3 +1,4 @@
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -17,4 +18,12 @@ class CheckedInParticipantBuilderTest {
         assertThat(resultCheckedInParticipant).isEqualTo(expectedParticipant);
 
     }
+
+    @Test
+    public void build_checked_in_participant_with_null_check_in_time_when_wrong_format_string_given() {
+        CheckedInParticipant checkedInParticipant = CheckedInParticipantBuilder.create("2019-04-17 14h15", "2019-04-17-14-15",
+                ChoiceAccomodation.TRIPLE);
+        Assertions.assertThat(checkedInParticipant.getCheckOutDateTime()).isNull();
+    }
+
 }

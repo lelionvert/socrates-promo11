@@ -26,6 +26,10 @@ public class CheckedInParticipant {
         return choice.getPrice();
     }
 
+    public LocalDateTime getCheckOutDateTime() {
+        return checkOutDateTime;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
