@@ -16,4 +16,10 @@ public class CheckedInParticipantTest {
         CheckedInParticipant checkedInParticipant = new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 23, 0));
         Assertions.assertThat(checkedInParticipant.checkedInAfter(LIMIT_ARRIVAL_DATE)).isTrue();
     }
+
+    @Test
+    public void build_correct_checked_in_participant_when_string_given_in_parameter() {
+        CheckedInParticipant checkedInParticipant = new CheckedInParticipant("2019-10-17 21h05");
+        Assertions.assertThat(checkedInParticipant.getCheckInDateTime()).isEqualTo(LocalDateTime.of(2019,10,17,21,5));
+    }
 }
