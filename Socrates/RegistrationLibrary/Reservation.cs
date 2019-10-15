@@ -5,10 +5,15 @@ namespace RegistrationLibrary
     public class Reservation
     {
         private Choice choice;
-        private DateTime checkin;
-        private DateTime checkout;
+        private CheckTime checkin;
+        private CheckTime checkout;
 
-        public Reservation(Choice choice, DateTime checkin, DateTime checkout)
+        public Reservation(Choice choice)
+        {
+            this.choice = choice;
+        }
+
+        public Reservation(Choice choice, CheckTime checkin, CheckTime checkout)
         {
             this.choice = choice;
             this.checkin = checkin;
