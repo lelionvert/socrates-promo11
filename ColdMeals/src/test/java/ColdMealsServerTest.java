@@ -111,7 +111,7 @@ public class ColdMealsServerTest {
     }
 
     @Test
-    public void count_cold_meals_returns_1_for_late_participant_for_given_limit_date() {
+    public void count_cold_meals_returns_1_for_late_participant_for_given_parameterized_limit_date() {
         LocalDateTime limitDate = LocalDateTime.of(2020,10,22,21,0);
         ColdMealsServer coldMealsServer = new ColdMealsServer(limitDate);
 
