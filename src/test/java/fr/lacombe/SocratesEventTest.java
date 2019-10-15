@@ -11,7 +11,7 @@ public class SocratesEventTest {
     @Test
     public void list_participants_is_empty() {
         // Given
-        SocratesEvent theSocratesEvent = new SocratesEvent(new ArrayList<CheckIn>());
+        SocratesEvent theSocratesEvent = new SocratesEvent(new ArrayList<CheckIn>(), new ColdMealChecker("2019-10-17 21:01", "2019-10-18 01:59"));
 
         // When / Then
         Assertions.assertThat(theSocratesEvent.countParticipants()).isEqualTo(0);

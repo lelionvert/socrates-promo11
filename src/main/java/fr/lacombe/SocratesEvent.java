@@ -7,10 +7,6 @@ public class SocratesEvent {
     private final List<CheckIn> checkIns;
     private ColdMealChecker coldMealChecker;
 
-    public SocratesEvent(List<CheckIn> checkIns) {
-        this.checkIns = checkIns;
-    }
-
     public SocratesEvent(List<CheckIn> checkIns, ColdMealChecker coldMealChecker) {
         this.checkIns = checkIns;
         this.coldMealChecker = coldMealChecker;
