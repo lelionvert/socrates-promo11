@@ -5,15 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.lacombe</groupId>
-    <artifactId>socrates-promo11</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>Cold-meal-counter</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>RegistrationPriceCalculation</module>
-        <module>ColdMealCounter</module>
-    </modules>
 
-    <name>socrates-promo11</name>
+    <name>Cold-meal-counter</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 

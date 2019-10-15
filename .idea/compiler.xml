@@ -6,10 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="socrates-promo11" />
+        <module name="RegistrationPriceCalculation" />
+        <module name="ColdMealCounter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ColdMealCounter" target="11" />
+      <module name="RegistrationPriceCalculation" target="11" />
       <module name="socrates-promo11" target="11" />
     </bytecodeTargetLevel>
   </component>

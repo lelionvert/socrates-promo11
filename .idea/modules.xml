@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ColdMealCounter/ColdMealCounter.iml" filepath="$PROJECT_DIR$/ColdMealCounter/ColdMealCounter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RegistrationPriceCalculation/RegistrationPriceCalculation.iml" filepath="$PROJECT_DIR$/RegistrationPriceCalculation/RegistrationPriceCalculation.iml" />
       <module fileurl="file://$PROJECT_DIR$/socrates-promo11.iml" filepath="$PROJECT_DIR$/socrates-promo11.iml" />
     </modules>
   </component>
