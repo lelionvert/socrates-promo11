@@ -43,5 +43,15 @@ namespace Socrates.Tests
             Check.That(coldMealChecker.ColdMealNumber(checkInList)).IsEqualTo(3);
         }
 
+        [Test]
+        public void InputStringSetColdMealCheckerDeadline()
+        {
+            var inputDate = "2019-10-17 21h05";
+            var expectedDate = new DateTime(2019, 10, 17, 21, 5, 0);
+            var coldMealCheker = new ColdMealChecker(inputDate);
+
+            Check.That(coldMealCheker.Deadline).IsEqualTo(expectedDate);
+        }
+
     }
 }
