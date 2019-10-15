@@ -20,9 +20,8 @@ public class RegistrationPriceTest {
         RegistrationDate checkInDate = new RegistrationDate(checkInDay, checkInHour, checkInMinutes);
         RegistrationDate checkOutDate = new RegistrationDate(checkOutDay, checkOutHour, checkOutMinutes);
 
-        String choice = "TRIPLE";
-
-        CheckedInParticipant victoria = new CheckedInParticipant(checkInDate, checkOutDate, choice);
+        CheckedInParticipant victoria = new CheckedInParticipant(checkInDate, checkOutDate,
+                ChoiceAccomodation.TRIPLE);
 
         assertThat(SocratesRegistrationPricer.chargesTotalAmount(victoria)).isEqualTo(410);
     }
@@ -33,5 +32,13 @@ public class RegistrationPriceTest {
         RegistrationDate date = new RegistrationDate(DayOfWeek.FRIDAY, 0, 0);
 
         assertThat(date.getDay()).isEqualTo(DayOfWeek.FRIDAY);
+    }
+
+    @Test
+    void checked_in_participant_has_correct_choice_when_requested() {
+        RegistrationDate date = new RegistrationDate(DayOfWeek.FRIDAY, 0, 0);
+        CheckedInParticipant pierre = new CheckedInParticipant(date, date, ChoiceAccomodation.TRIPLE);
+
+        assertThat(pierre.getChoice()).isEqualTo(ChoiceAccomodation.TRIPLE);
     }
 }
