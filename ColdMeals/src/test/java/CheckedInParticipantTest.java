@@ -22,4 +22,11 @@ public class CheckedInParticipantTest {
         CheckedInParticipant checkedInParticipant = new CheckedInParticipant("2019-10-17 21h05");
         Assertions.assertThat(checkedInParticipant.getCheckInDateTime()).isEqualTo(LocalDateTime.of(2019,10,17,21,5));
     }
+
+    @Test
+    public void build_correct_checked_in_participant_when_string_given_in_parameter_bis() {
+        CheckedInParticipant checkedInParticipant = new CheckedInParticipant("2019-10-17 20h05");
+        Assertions.assertThat(checkedInParticipant.getCheckInDateTime()).isEqualTo(LocalDateTime.of(2019,10,17,20,5));
+    }
+
 }
