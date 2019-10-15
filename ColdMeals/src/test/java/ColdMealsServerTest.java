@@ -71,7 +71,7 @@ public class ColdMealsServerTest {
     }
 
     @Test
-    public void count_cold_meals_returns_3_when_1_participant_arrives_after_9_pm_and_2_arrive_before() {
+    public void count_cold_meals_returns_1_when_1_participant_arrives_after_9_pm_and_2_arrive_before() {
         List<CheckedInParticipant> checkedInParticipantList = new ArrayList<>();
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 22, 0)));
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 20, 0)));
@@ -87,4 +87,27 @@ public class ColdMealsServerTest {
 
         Assertions.assertThat(ColdMealsServer.errorMessage(checkedInParticipantList)).isEqualTo("Be careful Attendant without date !");
     }
+
+
+    @Test
+    public void count_cold_meals_returns_0_when_1_participant_arrives_next_day_after_2_am_and_2_arrive_before() {
+        List<CheckedInParticipant> checkedInParticipantList = new ArrayList<>();
+        checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 18, 4, 0)));
+        checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 20, 0)));
+        checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 20, 0)));
+
+        Assertions.assertThat(ColdMealsServer.countColdMeals(checkedInParticipantList)).isEqualTo(0);
+    }
+
+
+    @Test
+    public void count_cold_meals_returns_2_when_1_participant_arrives_next_day_after_2_am_and_1_arrives_thursday_after_9_pm_and_1_arrives_before() {
+        List<CheckedInParticipant> checkedInParticipantList = new ArrayList<>();
+        checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 18, 4, 0)));
+        checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 22, 0)));
+        checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 20, 0)));
+
+        Assertions.assertThat(ColdMealsServer.countColdMeals(checkedInParticipantList)).isEqualTo(1);
+    }
+
 }
