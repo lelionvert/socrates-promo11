@@ -18,5 +18,14 @@ namespace Socrates.Tests.RegistrationLibraryTests
 
             Check.That(priceCalculator.TotalAmount(reservation)).IsEqualTo(610);
         }
+
+        [Test]
+        public void PriceCalculatorReturnsNoAccommodationReservationTotalAmount()
+        {
+            var priceCalculator = new PriceCalculator();
+            var reservation = new Reservation(Choice.NoAccommodation);
+
+            Check.That(priceCalculator.TotalAmount(reservation)).IsEqualTo(240);
+        }
     }
 }
