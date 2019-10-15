@@ -11,7 +11,7 @@ namespace Socrates.Tests.RegistrationLibraryTests
     class ScenariiTests
     {
         [Test]
-        public void VictoriaRegisterForTriple()
+        public void VictoriaRegistersForTriple()
         {
             var checkIn = new CheckTime(
                 DayOfWeek.Thursday,
@@ -27,6 +27,25 @@ namespace Socrates.Tests.RegistrationLibraryTests
                 .TotalAmount
                 )
             .IsEqualTo(410);
+        }
+
+        [Test]
+        public void JeanPierreRegistersForNoAccommodation()
+        {
+            var checkIn = new CheckTime(
+                DayOfWeek.Thursday,
+                "18:00"
+            );
+            var checkOut = new CheckTime(
+                DayOfWeek.Sunday,
+                "14:00"
+            );
+
+            Check.That(
+                new Reservation(Choice.NoAccommodation, checkIn, checkOut)
+                .TotalAmount
+                )
+            .IsEqualTo(240);
         }
     }
 }

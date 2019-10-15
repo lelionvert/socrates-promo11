@@ -33,5 +33,13 @@ namespace Socrates.Tests.RegistrationLibraryTests
 
             Check.That(reservation.TotalAmount).IsEqualTo(410);
         }
+
+        [Test]
+        public void NoAccommodationPrice()
+        {
+            var reservation = new Reservation(Choice.NoAccommodation);
+
+            Check.That(reservation.TotalAmount).IsEqualTo(240);
+        }
     }
 }
