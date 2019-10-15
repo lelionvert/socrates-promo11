@@ -12,7 +12,7 @@ public class ColdMealsServerTest {
     public void count_cold_meals_returns_0_when_empty_list_of_participants() {
         ColdMealsServer coldMealsServer = new ColdMealsServer(LocalDateTime.of(2019,10,17,21,0));
         List<CheckedInParticipant> checkedInParticipantList = Collections.emptyList();
-        Assertions.assertThat(coldMealsServer.countColdMealsParameterized(checkedInParticipantList)).isEqualTo(0);
+        Assertions.assertThat(coldMealsServer.countColdMeals(checkedInParticipantList)).isEqualTo(0);
     }
 
     @Test
@@ -20,7 +20,7 @@ public class ColdMealsServerTest {
         ColdMealsServer coldMealsServer = new ColdMealsServer(LocalDateTime.of(2019,10,17,21,0));
         List<CheckedInParticipant> checkedInParticipantSingleton = Collections.singletonList(
                 new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 22, 0)));
-        Assertions.assertThat(coldMealsServer.countColdMealsParameterized(checkedInParticipantSingleton)).isEqualTo(1);
+        Assertions.assertThat(coldMealsServer.countColdMeals(checkedInParticipantSingleton)).isEqualTo(1);
     }
 
     @Test
@@ -29,7 +29,7 @@ public class ColdMealsServerTest {
         List<CheckedInParticipant> checkedInParticipantList = new ArrayList<>();
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 22, 0)));
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 23, 0)));
-        Assertions.assertThat(coldMealsServer.countColdMealsParameterized(checkedInParticipantList)).isEqualTo(2);
+        Assertions.assertThat(coldMealsServer.countColdMeals(checkedInParticipantList)).isEqualTo(2);
     }
 
     @Test
@@ -40,7 +40,7 @@ public class ColdMealsServerTest {
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 22, 0)));
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 22, 0)));
 
-        Assertions.assertThat(coldMealsServer.countColdMealsParameterized(checkedInParticipantList)).isEqualTo(3);
+        Assertions.assertThat(coldMealsServer.countColdMeals(checkedInParticipantList)).isEqualTo(3);
     }
 
     @Test
@@ -51,7 +51,7 @@ public class ColdMealsServerTest {
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 22, 0)));
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 20, 0)));
 
-        Assertions.assertThat(coldMealsServer.countColdMealsParameterized(checkedInParticipantList)).isEqualTo(2);
+        Assertions.assertThat(coldMealsServer.countColdMeals(checkedInParticipantList)).isEqualTo(2);
     }
 
     @Test
@@ -64,7 +64,7 @@ public class ColdMealsServerTest {
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 22, 0)));
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 20, 0)));
 
-        Assertions.assertThat(coldMealsServer.countColdMealsParameterized(checkedInParticipantList)).isEqualTo(3);
+        Assertions.assertThat(coldMealsServer.countColdMeals(checkedInParticipantList)).isEqualTo(3);
     }
 
     @Test
@@ -76,7 +76,7 @@ public class ColdMealsServerTest {
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 20, 0)));
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 22, 0)));
 
-        Assertions.assertThat(coldMealsServer.countColdMealsParameterized(checkedInParticipantList)).isEqualTo(2);
+        Assertions.assertThat(coldMealsServer.countColdMeals(checkedInParticipantList)).isEqualTo(2);
     }
 
     @Test
@@ -88,7 +88,7 @@ public class ColdMealsServerTest {
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 20, 0)));
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 20, 0)));
 
-        Assertions.assertThat(coldMealsServer.countColdMealsParameterized(checkedInParticipantList)).isEqualTo(1);
+        Assertions.assertThat(coldMealsServer.countColdMeals(checkedInParticipantList)).isEqualTo(1);
     }
 
     @Test
@@ -111,7 +111,7 @@ public class ColdMealsServerTest {
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 20, 0)));
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 20, 0)));
 
-        Assertions.assertThat(coldMealsServer.countColdMealsParameterized(checkedInParticipantList)).isEqualTo(0);
+        Assertions.assertThat(coldMealsServer.countColdMeals(checkedInParticipantList)).isEqualTo(0);
     }
 
 
@@ -124,7 +124,7 @@ public class ColdMealsServerTest {
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 22, 0)));
         checkedInParticipantList.add(new CheckedInParticipant(LocalDateTime.of(2019, 10, 17, 20, 0)));
 
-        Assertions.assertThat(coldMealsServer.countColdMealsParameterized(checkedInParticipantList)).isEqualTo(1);
+        Assertions.assertThat(coldMealsServer.countColdMeals(checkedInParticipantList)).isEqualTo(1);
     }
 
     @Test
@@ -136,6 +136,6 @@ public class ColdMealsServerTest {
         checkedInParticipants.add(new CheckedInParticipant(LocalDateTime.of(2020,10,22,23,0)));
         checkedInParticipants.add(new CheckedInParticipant(LocalDateTime.of(2020,10,22,20,0)));
 
-        Assertions.assertThat(coldMealsServer.countColdMealsParameterized(checkedInParticipants)).isEqualTo(1);
+        Assertions.assertThat(coldMealsServer.countColdMeals(checkedInParticipants)).isEqualTo(1);
     }
 }

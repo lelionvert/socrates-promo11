@@ -9,17 +9,11 @@ public class ColdMealsServer {
         this.limitDate = limitDate;
     }
 
-    public static long countColdMeals(List<CheckedInParticipant> checkedInParticipantList) {
-        return checkedInParticipantList.stream()
-                .filter(checkedInParticipant -> !checkedInParticipant.checkedInAfter(LIMIT_ARRIVAL_DATE.plusHours(5)))
-                .filter(checkedInParticipant -> checkedInParticipant.checkedInAfter(LIMIT_ARRIVAL_DATE)).count();
-    }
-
-    public static String errorMessage(List<CheckedInParticipant> checkedInParticipantList) {
+    public String errorMessage(List<CheckedInParticipant> checkedInParticipantList) {
         return "Be careful Attendant without date !";
     }
 
-    public long countColdMealsParameterized(List<CheckedInParticipant> checkedInParticipants) {
+    public long countColdMeals(List<CheckedInParticipant> checkedInParticipants) {
         return checkedInParticipants.stream()
                 .filter(checkedInParticipant -> !checkedInParticipant.checkedInAfter(limitDate.plusHours(5)))
                 .filter(checkedInParticipant -> checkedInParticipant.checkedInAfter(limitDate)).count();
