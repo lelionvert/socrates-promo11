@@ -24,7 +24,7 @@ public class SocratesEventTest {
         listCheckIns.add(new CheckIn("2019-10-17 20:00"));
         listCheckIns.add(new CheckIn("2019-10-17 21:00"));
 
-        SocratesEvent theSocratesEvent = new SocratesEvent(listCheckIns);
+        SocratesEvent theSocratesEvent = new SocratesEvent(listCheckIns, new ColdMealChecker("2019-10-17 21:01", "2019-10-18 01:59"));
 
         // When / Then
         Assertions.assertThat(theSocratesEvent.countParticipants()).isEqualTo(2);
@@ -37,7 +37,7 @@ public class SocratesEventTest {
         listCheckIns.add(new CheckIn("2019-10-17 20:00"));
         listCheckIns.add(new CheckIn("2019-10-17 21:00"));
 
-        SocratesEvent theSocratesEvent = new SocratesEvent(listCheckIns);
+        SocratesEvent theSocratesEvent = new SocratesEvent(listCheckIns, new ColdMealChecker("2019-10-17 21:01", "2019-10-18 01:59"));
 
         // When / Then
         Assertions.assertThat(theSocratesEvent.countColdMeals()).isEqualTo(0);
@@ -50,7 +50,7 @@ public class SocratesEventTest {
         listCheckIns.add(new CheckIn("2019-10-17 20:00"));
         listCheckIns.add(new CheckIn("2019-10-17 21:01"));
 
-        SocratesEvent theSocratesEvent = new SocratesEvent(listCheckIns);
+        SocratesEvent theSocratesEvent = new SocratesEvent(listCheckIns, new ColdMealChecker("2019-10-17 21:01", "2019-10-18 01:59"));
 
         // When / Then
         Assertions.assertThat(theSocratesEvent.countColdMeals()).isEqualTo(1);

@@ -11,7 +11,7 @@ public class CheckInTest {
         CheckIn checkIn = new CheckIn("2019-10-17 22:00");
 
         // When / Then
-        Assertions.assertThat(new ColdMealChecker().checkColdMeal(checkIn.getArrivalDate())).isTrue();
+        Assertions.assertThat(new ColdMealChecker("2019-10-17 21:01", "2019-10-18 01:59").checkColdMeal(checkIn.getArrivalDate())).isTrue();
     }
 
     @Test
@@ -20,7 +20,7 @@ public class CheckInTest {
         CheckIn checkIn = new CheckIn("2019-10-17 21:00");
 
         // When / Then
-        Assertions.assertThat(new ColdMealChecker().checkColdMeal(checkIn.getArrivalDate())).isFalse();
+        Assertions.assertThat(new ColdMealChecker("2019-10-17 21:01", "2019-10-18 01:59").checkColdMeal(checkIn.getArrivalDate())).isFalse();
     }
 
     @Test
@@ -29,6 +29,6 @@ public class CheckInTest {
         CheckIn checkIn = new CheckIn("2019-10-18 02:00");
 
         // When / Then
-        Assertions.assertThat(new ColdMealChecker().checkColdMeal(checkIn.getArrivalDate())).isFalse();
+        Assertions.assertThat(new ColdMealChecker("2019-10-17 21:01", "2019-10-18 01:59").checkColdMeal(checkIn.getArrivalDate())).isFalse();
     }
 }

@@ -22,7 +22,6 @@ public class SocratesEvent {
 
     public int countColdMeals() {
         int numberColdMeals = 0;
-        if(coldMealChecker == null) coldMealChecker = new ColdMealChecker();
         for(CheckIn checkIn : checkIns) {
             if(coldMealChecker.checkColdMeal(checkIn.getArrivalDate())) {
                 numberColdMeals ++;
