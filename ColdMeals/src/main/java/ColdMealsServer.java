@@ -2,10 +2,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class ColdMealsServer {
-    private LocalDateTime limitDate;
+    private final LocalDateTime limitCheckInDateTime;
 
-    public ColdMealsServer(LocalDateTime limitDate) {
-        this.limitDate = limitDate;
+    public ColdMealsServer(LocalDateTime limitCheckInDateTime) {
+        this.limitCheckInDateTime = limitCheckInDateTime;
     }
 
     public String errorMessage(List<CheckedInParticipant> checkedInParticipantList) {
@@ -14,7 +14,7 @@ public class ColdMealsServer {
 
     public long countColdMeals(List<CheckedInParticipant> checkedInParticipants) {
         return checkedInParticipants.stream()
-                .filter(checkedInParticipant -> !checkedInParticipant.checkedInAfter(limitDate.plusHours(5)))
-                .filter(checkedInParticipant -> checkedInParticipant.checkedInAfter(limitDate)).count();
+                .filter(checkedInParticipant -> !checkedInParticipant.checkedInAfter(limitCheckInDateTime.plusHours(5)))
+                .filter(checkedInParticipant -> checkedInParticipant.checkedInAfter(limitCheckInDateTime)).count();
     }
 }
