@@ -24,7 +24,7 @@ namespace Socrates.Tests.RegistrationLibraryTests
             
             Check.That(
                 new Reservation(Choice.Triple, checkIn, checkOut)
-                .TotalAmount
+                .ChoiceAmount
                 )
             .IsEqualTo(410);
         }
@@ -43,9 +43,30 @@ namespace Socrates.Tests.RegistrationLibraryTests
 
             Check.That(
                 new Reservation(Choice.NoAccommodation, checkIn, checkOut)
-                .TotalAmount
+                .ChoiceAmount
                 )
             .IsEqualTo(240);
+        }
+
+        [Test]
+        [Ignore("W I P")]
+        public void MichelRegistersForTwinWithout_1_Meal()
+        {
+            var checkIn = new CheckTime(
+                DayOfWeek.Friday,
+                "8:00"
+            );
+            var checkOut = new CheckTime(
+                DayOfWeek.Sunday,
+                "14:30"
+            );
+            var reservation = new Reservation(Choice.Twin, checkIn, checkOut);
+            var priceCalculator = new PriceCalculator();
+
+            Check.That(
+                priceCalculator.TotalAmount(reservation)
+                )
+            .IsEqualTo(470);
         }
     }
 }

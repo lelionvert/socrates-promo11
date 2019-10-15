@@ -15,7 +15,7 @@ namespace Socrates.Tests.RegistrationLibraryTests
         {
             var reservation = new Reservation(Choice.Single);
 
-            Check.That(reservation.TotalAmount).IsEqualTo(610);
+            Check.That(reservation.ChoiceAmount).IsEqualTo(610);
         }
 
         [Test]
@@ -23,7 +23,7 @@ namespace Socrates.Tests.RegistrationLibraryTests
         {
             var reservation = new Reservation(Choice.Twin);
 
-            Check.That(reservation.TotalAmount).IsEqualTo(510);
+            Check.That(reservation.ChoiceAmount).IsEqualTo(510);
         }
 
         [Test]
@@ -31,7 +31,7 @@ namespace Socrates.Tests.RegistrationLibraryTests
         {
             var reservation = new Reservation(Choice.Triple);
 
-            Check.That(reservation.TotalAmount).IsEqualTo(410);
+            Check.That(reservation.ChoiceAmount).IsEqualTo(410);
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace Socrates.Tests.RegistrationLibraryTests
         {
             var reservation = new Reservation(Choice.NoAccommodation);
 
-            Check.That(reservation.TotalAmount).IsEqualTo(240);
+            Check.That(reservation.ChoiceAmount).IsEqualTo(240);
         }
     }
 }

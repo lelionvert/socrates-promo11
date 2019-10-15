@@ -20,12 +20,6 @@ namespace RegistrationLibrary
             this.checkout = checkout;
         }
 
-        public int TotalAmount
-        {
-            get
-            {
-                return (int) choice;
-            }
-        }
+        public int ChoiceAmount { get { return (int)choice; } }
     }
 }
