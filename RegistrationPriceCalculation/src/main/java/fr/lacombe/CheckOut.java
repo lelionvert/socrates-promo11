@@ -1,12 +1,9 @@
 package fr.lacombe;
 
-import java.time.DayOfWeek;
-
 public class CheckOut {
-    public CheckOut(String s) {
-    }
+    private DateEngine departureDate;
 
-    public DayOfWeek getDay() {
-        return DayOfWeek.SATURDAY;
+    public CheckOut(String departureDate) {
+        this.departureDate = new DateEngine(departureDate);
     }
 }
