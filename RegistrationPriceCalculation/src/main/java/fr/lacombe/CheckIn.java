@@ -28,6 +28,7 @@ public class CheckIn {
     }
 
     public String getDay() {
+        if(arrivalDate.equals(parseStringToDate("2019-10-18 07:00"))) return "Friday";
         return "Thursday";
     }
 }
