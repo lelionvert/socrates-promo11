@@ -3,6 +3,8 @@
     public enum Choice
     {
         Single = 610,
-        Triple = 410
+        Twin = 510,
+        Triple = 410,
+        
     }
 }

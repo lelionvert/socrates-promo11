@@ -17,5 +17,13 @@ namespace Socrates.Tests.RegistrationLibraryTests
 
             Check.That(reservation.TotalAmount).IsEqualTo(610);
         }
+
+        [Test]
+        public void TwinRoomPrice()
+        {
+            var reservation = new Reservation(Choice.Twin);
+
+            Check.That(reservation.TotalAmount).IsEqualTo(510);
+        }
     }
 }
