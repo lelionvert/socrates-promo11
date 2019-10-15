@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.time.DayOfWeek;
@@ -6,19 +7,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class RegistrationPriceTest {
     @Test
+    @Disabled
     void validate_scenario_1_victoria() {
-        DayOfWeek checkInDay = DayOfWeek.THURSDAY;
-        int checkInHour = 21;
-        int checkInMinutes = 0;
+        String checkInDateThursday = "2019-10-17 21h00";
+        String checkOutDateSunday = "2019-10-20 15h00";
 
-        DayOfWeek checkOutDay = DayOfWeek.SUNDAY;
-        int checkOutHour = 15;
-        int checkOutMinutes = 0;
-
-        RegistrationDate checkInDate = new RegistrationDate(checkInDay, checkInHour, checkInMinutes);
-        RegistrationDate checkOutDate = new RegistrationDate(checkOutDay, checkOutHour, checkOutMinutes);
-
-        CheckedInParticipant victoria = new CheckedInParticipant(checkInDate, checkOutDate,
+        CheckedInParticipant victoria = CheckedInParticipantBuilder.create(checkInDateThursday, checkOutDateSunday,
                 ChoiceAccomodation.TRIPLE);
 
         assertThat(SocratesRegistrationPricer.chargesTotalAmount(victoria)).isEqualTo(410);
