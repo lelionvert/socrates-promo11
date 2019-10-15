@@ -23,4 +23,23 @@ class RegistrationPriceTest {
 
         assertThat(SocratesRegistrationPricer.chargesTotalAmount(victoria)).isEqualTo(410);
     }
+
+    @Test
+    void validate_scenario_1_jp() {
+        DayOfWeek checkInDay = DayOfWeek.THURSDAY;
+        int checkInHour = 18;
+        int checkInMinutes = 0;
+
+        DayOfWeek checkOutDay = DayOfWeek.SUNDAY;
+        int checkOutHour = 14;
+        int checkOutMinutes = 0;
+
+        RegistrationDate checkInDate = new RegistrationDate(checkInDay, checkInHour, checkInMinutes);
+        RegistrationDate checkOutDate = new RegistrationDate(checkOutDay, checkOutHour, checkOutMinutes);
+
+        CheckedInParticipant jp = new CheckedInParticipant(checkInDate, checkOutDate,
+                ChoiceAccomodation.NO_ACCOMODATION);
+
+        assertThat(SocratesRegistrationPricer.chargesTotalAmount(jp)).isEqualTo(240);
+    }
 }
