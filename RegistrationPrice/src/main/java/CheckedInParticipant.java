@@ -6,11 +6,6 @@ public class CheckedInParticipant {
     private LocalDateTime checkOutDateTime;
     private final ChoiceAccomodation choice;
 
-    public CheckedInParticipant(RegistrationDate checkInDate, RegistrationDate checkOutDate, ChoiceAccomodation choice) {
-
-        this.choice = choice;
-    }
-
     public CheckedInParticipant(LocalDateTime checkInDateTime, LocalDateTime checkOutDateTime, ChoiceAccomodation triple) {
 
         this.checkInDateTime = checkInDateTime;
