@@ -14,9 +14,12 @@ namespace Library
         }
         public ColdMealChecker(String deadline)
         {
-            Deadline = DateTime.ParseExact(deadline, "yyyy-MM-dd HH\\hmm",
-                System.Globalization.CultureInfo.InvariantCulture
-            );
+            try {
+                Deadline = DateTime.ParseExact(deadline, "yyyy-MM-dd HH\\hmm",
+                    System.Globalization.CultureInfo.InvariantCulture
+                );
+            } catch (FormatException) { 
+            }
         }
 
         public int ColdMealNumber(List<CheckIn> checkIns)

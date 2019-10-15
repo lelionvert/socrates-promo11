@@ -44,7 +44,7 @@ namespace Socrates.Tests
         }
 
         [Test]
-        public void InputStringSetColdMealCheckerDeadline()
+        public void InputStringSetsColdMealCheckerDeadline()
         {
             var inputDate = "2019-10-17 21h05";
             var expectedDate = new DateTime(2019, 10, 17, 21, 5, 0);
@@ -53,5 +53,14 @@ namespace Socrates.Tests
             Check.That(coldMealCheker.Deadline).IsEqualTo(expectedDate);
         }
 
+        [Test]
+        public void InputStringDoesNotSetColdMealCheckerDeadline()
+        {
+            var inputDate = "2019-10-17 AAhAA";
+            var expectedDate = new DateTime();
+            var coldMealCheker = new ColdMealChecker(inputDate);
+
+            Check.That(coldMealCheker.Deadline).IsEqualTo(expectedDate);
+        }
     }
 }
