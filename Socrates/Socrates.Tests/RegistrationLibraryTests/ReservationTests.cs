@@ -25,5 +25,13 @@ namespace Socrates.Tests.RegistrationLibraryTests
 
             Check.That(reservation.TotalAmount).IsEqualTo(510);
         }
+
+        [Test]
+        public void TripleRoomPrice()
+        {
+            var reservation = new Reservation(Choice.Triple);
+
+            Check.That(reservation.TotalAmount).IsEqualTo(410);
+        }
     }
 }
