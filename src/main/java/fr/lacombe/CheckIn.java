@@ -4,18 +4,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Participant {
-    private Date date;
-
-    public Participant(String date) {
-        this.date = parseStringToDate(date);
+public class CheckIn {
+    public Date getArrivalDate() {
+        return arrivalDate;
     }
 
-    public boolean checkColdMeal() {
-        if (date.before(parseStringToDate("2019-10-17 21:01"))
-                || date.after(parseStringToDate("2019-10-18 01:59")))
-            return false;
-        return true;
+    private Date arrivalDate;
+
+    public CheckIn(String arrivalDate) {
+        this.arrivalDate = parseStringToDate(arrivalDate);
     }
 
     public Date parseStringToDate(String date) {

@@ -11,7 +11,7 @@ public class SocratesEventTest {
     @Test
     public void list_participants_is_empty() {
         // Given
-        SocratesEvent theSocratesEvent = new SocratesEvent(new ArrayList<Participant>());
+        SocratesEvent theSocratesEvent = new SocratesEvent(new ArrayList<CheckIn>());
 
         // When / Then
         Assertions.assertThat(theSocratesEvent.countParticipants()).isEqualTo(0);
@@ -20,11 +20,11 @@ public class SocratesEventTest {
     @Test
     public void list_participants_is_not_empty() {
         // Given
-        List<Participant> listParticipants = new ArrayList<Participant>();
-        listParticipants.add(new Participant("2019-10-17 20:00"));
-        listParticipants.add(new Participant("2019-10-17 21:00"));
+        List<CheckIn> listCheckIns = new ArrayList<CheckIn>();
+        listCheckIns.add(new CheckIn("2019-10-17 20:00"));
+        listCheckIns.add(new CheckIn("2019-10-17 21:00"));
 
-        SocratesEvent theSocratesEvent = new SocratesEvent(listParticipants);
+        SocratesEvent theSocratesEvent = new SocratesEvent(listCheckIns);
 
         // When / Then
         Assertions.assertThat(theSocratesEvent.countParticipants()).isEqualTo(2);
@@ -33,11 +33,11 @@ public class SocratesEventTest {
     @Test
     public void number_cold_meal_is_zero() {
         // Given
-        List<Participant> listParticipants = new ArrayList<Participant>();
-        listParticipants.add(new Participant("2019-10-17 20:00"));
-        listParticipants.add(new Participant("2019-10-17 21:00"));
+        List<CheckIn> listCheckIns = new ArrayList<CheckIn>();
+        listCheckIns.add(new CheckIn("2019-10-17 20:00"));
+        listCheckIns.add(new CheckIn("2019-10-17 21:00"));
 
-        SocratesEvent theSocratesEvent = new SocratesEvent(listParticipants);
+        SocratesEvent theSocratesEvent = new SocratesEvent(listCheckIns);
 
         // When / Then
         Assertions.assertThat(theSocratesEvent.countColdMeals()).isEqualTo(0);
@@ -46,14 +46,29 @@ public class SocratesEventTest {
     @Test
     public void number_cold_meal_is_not_zero() {
         // Given
-        List<Participant> listParticipants = new ArrayList<Participant>();
-        listParticipants.add(new Participant("2019-10-17 20:00"));
-        listParticipants.add(new Participant("2019-10-17 21:01"));
+        List<CheckIn> listCheckIns = new ArrayList<CheckIn>();
+        listCheckIns.add(new CheckIn("2019-10-17 20:00"));
+        listCheckIns.add(new CheckIn("2019-10-17 21:01"));
 
-        SocratesEvent theSocratesEvent = new SocratesEvent(listParticipants);
+        SocratesEvent theSocratesEvent = new SocratesEvent(listCheckIns);
 
         // When / Then
         Assertions.assertThat(theSocratesEvent.countColdMeals()).isEqualTo(1);
     }
+
+    @Test
+    public void new_date_cold_meal() {
+        // Given
+        List<CheckIn> listCheckIns = new ArrayList<CheckIn>();
+        listCheckIns.add(new CheckIn("2020-10-22 20:00"));
+        listCheckIns.add(new CheckIn("2020-10-22 21:01"));
+
+        SocratesEvent theSocratesEvent = new SocratesEvent(listCheckIns, new ColdMealChecker("2020-10-22 21:01", "2020-10-23 01:59"));
+
+        // When / Then
+        Assertions.assertThat(theSocratesEvent.countColdMeals()).isEqualTo(1);
+    }
+
+
 
 }

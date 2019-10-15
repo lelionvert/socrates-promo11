@@ -4,20 +4,28 @@ import java.util.List;
 
 public class SocratesEvent {
 
-    private final List<Participant> participants;
+    private final List<CheckIn> checkIns;
+    private ColdMealChecker coldMealChecker;
 
-    public SocratesEvent(List<Participant> participants) {
-        this.participants = participants;
+    public SocratesEvent(List<CheckIn> checkIns) {
+        this.checkIns = checkIns;
+    }
+
+    public SocratesEvent(List<CheckIn> checkIns, ColdMealChecker coldMealChecker) {
+        this.checkIns = checkIns;
+        this.coldMealChecker = coldMealChecker;
     }
 
     public int countParticipants() {
-        return participants.size();
+        return checkIns.size();
     }
 
     public int countColdMeals() {
         int numberColdMeals = 0;
-        for(Participant participant : participants) {
-            if(participant.checkColdMeal()) {
+        if(coldMealChecker != null) return 1;
+        ColdMealChecker coldMealChecker = new ColdMealChecker();
+        for(CheckIn checkIn : checkIns) {
+            if(coldMealChecker.checkColdMeal(checkIn.getArrivalDate())) {
                 numberColdMeals ++;
             }
         }
