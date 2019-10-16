@@ -16,12 +16,28 @@ public class Participant {
     }
 
     public int calculateTotalAmount() {
-        if (checkIn.getArrivalDay() == "Friday" && checkOut.getDepartureDay() == "Saturday") {
-            return choice.getPrice() - MEAL_PRICE*2;
+        return choice.getPrice() - calculateMealsToRefund();
+    }
+
+    public int calculateMealsToRefund() {
+        return MEAL_PRICE * calculateNbMealsRetrieved();
+    }
+
+    public int calculateNbMealsRetrieved() {
+        if (hasTwoMealsToRefund()) {
+            return 2;
         }
-        if (checkIn.getArrivalDay() == "Friday" || checkOut.getDepartureDay() == "Saturday") {
-            return choice.getPrice() - MEAL_PRICE;
+        if (hasOneMealToRefund()) {
+           return  1;
         }
-        return choice.getPrice();
+        return 0;
+    }
+
+    public boolean hasOneMealToRefund() {
+        return checkIn.arrivalDayIsFriday() || checkOut.departureDayIsSaturday();
+    }
+
+    public boolean hasTwoMealsToRefund() {
+        return checkIn.arrivalDayIsFriday() && checkOut.departureDayIsSaturday();
     }
 }

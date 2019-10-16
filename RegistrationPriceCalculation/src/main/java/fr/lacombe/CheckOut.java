@@ -9,7 +9,7 @@ public class CheckOut {
         this.departureHour = departureHour;
     }
 
-    public String getDepartureDay() {
-        return departureDay;
+    public boolean departureDayIsSaturday() {
+        return "Saturday".equals(departureDay);
     }
 }
