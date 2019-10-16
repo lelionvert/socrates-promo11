@@ -5,7 +5,7 @@ import java.time.format.DateTimeParseException;
 public class CheckedInParticipantBuilder {
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH'h'mm");
 
-    public static CheckedInParticipant create(String checkInDateThursday, String checkOutDateSunday, ChoiceAccomodation triple) {
+    public static CheckedInParticipant create(String checkInDateThursday, String checkOutDateSunday, ChoiceAccommodation triple) {
         LocalDateTime checkInDateTime = createDateFromFormat(checkInDateThursday);
         LocalDateTime checkOutDateTime = createDateFromFormat(checkOutDateSunday);
 

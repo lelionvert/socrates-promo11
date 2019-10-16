@@ -9,7 +9,7 @@ class RegistrationPriceTest {
         String checkOutDateSunday = "2019-10-20 15h00";
 
         CheckedInParticipant victoria = CheckedInParticipantBuilder.create(checkInDateThursday, checkOutDateSunday,
-                ChoiceAccomodation.TRIPLE);
+                ChoiceAccommodation.TRIPLE);
 
         assertThat(SocratesRegistrationPricer.chargesTotalAmount(victoria)).isEqualTo(410);
     }
@@ -20,7 +20,7 @@ class RegistrationPriceTest {
         String checkOutDateSunday = "2019-10-20 14h00";
 
         CheckedInParticipant jp = CheckedInParticipantBuilder.create(checkInDateThursday, checkOutDateSunday,
-                ChoiceAccomodation.NO_ACCOMMODATION);
+                ChoiceAccommodation.NO_ACCOMMODATION);
 
         assertThat(SocratesRegistrationPricer.chargesTotalAmount(jp)).isEqualTo(240);
     }
@@ -31,7 +31,7 @@ class RegistrationPriceTest {
         String checkOutDateSunday = "2019-10-20 14h30";
 
         CheckedInParticipant michel = CheckedInParticipantBuilder.create(checkInDateFriday, checkOutDateSunday,
-                ChoiceAccomodation.TWIN);
+                ChoiceAccommodation.TWIN);
 
         assertThat(SocratesRegistrationPricer.chargesTotalAmount(michel)).isEqualTo(470);
     }

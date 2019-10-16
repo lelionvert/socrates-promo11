@@ -5,28 +5,28 @@ import java.util.Objects;
 public class CheckedInParticipant {
     private LocalDateTime checkInDateTime;
     private LocalDateTime checkOutDateTime;
-    private final ChoiceAccomodation choice;
+    private final ChoiceAccommodation choice;
 
-    public CheckedInParticipant(LocalDateTime checkInDateTime, LocalDateTime checkOutDateTime, ChoiceAccomodation triple) {
+    CheckedInParticipant(LocalDateTime checkInDateTime, LocalDateTime checkOutDateTime, ChoiceAccommodation triple) {
 
         this.checkInDateTime = checkInDateTime;
         this.checkOutDateTime = checkOutDateTime;
         this.choice = triple;
     }
 
-    public ChoiceAccomodation getChoice() {
+    ChoiceAccommodation getChoice() {
         return choice;
     }
 
-    public int getBasicChoicePrice() {
+    int getBasicChoicePrice() {
         return choice.getPrice();
     }
 
-    public LocalDateTime getCheckOutDateTime() {
+    LocalDateTime getCheckOutDateTime() {
         return checkOutDateTime;
     }
 
-    public DayOfWeek getCheckInDay() {
+    DayOfWeek getCheckInDay() {
         return checkInDateTime.getDayOfWeek();
     }
 

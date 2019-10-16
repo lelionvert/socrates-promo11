@@ -11,7 +11,7 @@ class CheckedInParticipantTest {
         String checkOutSunday = "2019-10-20 14h30";
 
         CheckedInParticipant michel = CheckedInParticipantBuilder.create(checkInFriday, checkOutSunday,
-                ChoiceAccomodation.TWIN);
+                ChoiceAccommodation.TWIN);
 
         assertThat(michel.getCheckInDay()).isEqualTo(DayOfWeek.FRIDAY);
     }
@@ -22,7 +22,7 @@ class CheckedInParticipantTest {
         String checkOutSunday = "2019-10-20 14h30";
 
         CheckedInParticipant michel = CheckedInParticipantBuilder.create(checkInThursday, checkOutSunday,
-                ChoiceAccomodation.TWIN);
+                ChoiceAccommodation.TWIN);
 
         assertThat(michel.getCheckInDay()).isEqualTo(DayOfWeek.THURSDAY);
     }

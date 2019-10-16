@@ -10,10 +10,10 @@ class CheckedInParticipantBuilderTest {
     @Test
     void create_should_have_correct_data_when_building_checked_in_participant() {
         CheckedInParticipant expectedParticipant = new CheckedInParticipant(LocalDateTime.of(2019, 4, 21, 14, 54),
-                LocalDateTime.of(2019, 4, 25, 10, 0), ChoiceAccomodation.TRIPLE);
+                LocalDateTime.of(2019, 4, 25, 10, 0), ChoiceAccommodation.TRIPLE);
 
         CheckedInParticipant resultCheckedInParticipant = CheckedInParticipantBuilder.create("2019-04-21 14h54",
-                "2019-04-25 10h00", ChoiceAccomodation.TRIPLE);
+                "2019-04-25 10h00", ChoiceAccommodation.TRIPLE);
 
         assertThat(resultCheckedInParticipant).isEqualTo(expectedParticipant);
 
@@ -22,7 +22,7 @@ class CheckedInParticipantBuilderTest {
     @Test
     void build_checked_in_participant_with_null_check_in_time_when_wrong_format_string_given() {
         CheckedInParticipant checkedInParticipant = CheckedInParticipantBuilder.create("2019-04-17 14h15", "2019-04-17-14-15",
-                ChoiceAccomodation.TRIPLE);
+                ChoiceAccommodation.TRIPLE);
         Assertions.assertThat(checkedInParticipant.getCheckOutDateTime()).isNull();
     }
 }
