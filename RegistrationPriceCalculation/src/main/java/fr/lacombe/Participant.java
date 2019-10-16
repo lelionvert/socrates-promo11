@@ -14,7 +14,7 @@ public class Participant {
         this.choice = choice;
     }
 
-    public Choice getChoice() {
-        return this.choice;
+    public int getTotalAmount() {
+        return new CalculatorPrice().calculatePrice(this.choice);
     }
 }

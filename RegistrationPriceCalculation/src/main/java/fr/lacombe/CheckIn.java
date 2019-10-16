@@ -1,10 +1,12 @@
 package fr.lacombe;
 
 public class CheckIn {
-    private DateEngine arrivalDate;
+    private String arrivalDay;
+    private String arrivalHour;
 
-    public CheckIn(String arrivalDate) {
-        this.arrivalDate = new DateEngine(arrivalDate);
+    public CheckIn(String arrivalDay, String arrivalHour) {
+        this.arrivalDay = arrivalDay;
+        this.arrivalHour = arrivalHour;
     }
 
 }
