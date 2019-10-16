@@ -10,6 +10,12 @@ namespace Socrates.Tests.RegistrationLibraryTests
     [TestFixture]
     class ReservationTests
     {
+        /*
+         *
+         * Choices Price
+         *
+         */
+
         [Test]
         public void SingleChoicePrice()
         {
@@ -42,8 +48,14 @@ namespace Socrates.Tests.RegistrationLibraryTests
             Check.That((int)reservation.Choice).IsEqualTo(240);
         }
 
+        /*
+         *
+         * Missing Meals
+         *
+         */
+
         [Test]
-        public void ReservationMissingNoMealAccordingToChecks()
+        public void VictoriaReservationMissingNoMealAccordingToChecks()
         {
             //Given / Then
             var reservation = new Reservation(
@@ -58,5 +70,23 @@ namespace Socrates.Tests.RegistrationLibraryTests
             ));
             Check.That(reservation.MissingMeals).IsEqualTo(0);
         }
+
+        [Test]
+        public void JeanPierreReservationMissingNoMealAccordingToChecks()
+        {
+            //Given / Then
+            var reservation = new Reservation(
+                        choice: Choice.NoAccommodation,
+                        checkin: new CheckTime(
+                            DayOfWeek.Thursday,
+                            "18:00"
+                        ),
+                        checkout: new CheckTime(
+                            DayOfWeek.Sunday,
+                            "14:00"
+            ));
+            Check.That(reservation.MissingMeals).IsEqualTo(0);
+        }
+
     }
 }
