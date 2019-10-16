@@ -4,13 +4,9 @@ using System.Text;
 
 namespace RegistrationLibrary
 {
-    public class PriceCalculator
+    public static class PriceCalculator
     {
-        public PriceCalculator()
-        {
-        }
-
-        public int TotalAmount(Reservation reservation) {
+        public static int TotalAmount(Reservation reservation) {
             var choiceAmount = (int)reservation.Choice;
             var remise = reservation.MissingMeals * 40;
             

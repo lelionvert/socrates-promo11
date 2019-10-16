@@ -11,7 +11,7 @@ namespace Socrates.Tests.RegistrationLibraryTests
     class ReservationTests
     {
         [Test]
-        public void SingleRoomPrice()
+        public void SingleChoicePrice()
         {
             var reservation = new Reservation(Choice.Single);
 
@@ -19,7 +19,7 @@ namespace Socrates.Tests.RegistrationLibraryTests
         }
 
         [Test]
-        public void TwinRoomPrice()
+        public void TwinChoicePrice()
         {
             var reservation = new Reservation(Choice.Twin);
 
@@ -27,7 +27,7 @@ namespace Socrates.Tests.RegistrationLibraryTests
         }
 
         [Test]
-        public void TripleRoomPrice()
+        public void TripleChoicePrice()
         {
             var reservation = new Reservation(Choice.Triple);
 
@@ -35,7 +35,7 @@ namespace Socrates.Tests.RegistrationLibraryTests
         }
 
         [Test]
-        public void NoAccommodationPrice()
+        public void NoAccommodationChoicePrice()
         {
             var reservation = new Reservation(Choice.NoAccommodation);
 

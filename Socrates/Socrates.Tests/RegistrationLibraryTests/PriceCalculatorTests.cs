@@ -11,79 +11,68 @@ namespace Socrates.Tests.RegistrationLibraryTests
     class PriceCalculatorTests
     {
         [Test]
-        public void SingleRoomPrice()
+        public void SingleChoiceTotalAmount()
         {
-            Check.That(
-                new PriceCalculator().TotalAmount(
-                    new Reservation(Choice.Single)
-                    )
-                ).IsEqualTo(610);
-        }
-
-        [Test]
-        public void TwinRoomPrice()
-        {
-            Check.That(
-                new PriceCalculator().TotalAmount(
-                    new Reservation(Choice.Twin)
-                    )
-                ).IsEqualTo(510);
-        }
-
-        [Test]
-        public void TripleRoomPrice()
-        {
-            Check.That(
-                new PriceCalculator().TotalAmount(
-                    new Reservation(Choice.Triple)
-                    )
-                ).IsEqualTo(410);
-        }
-
-        [Test]
-        public void NoAccommodationPrice()
-        {
-            Check.That(
-                new PriceCalculator().TotalAmount(
-                    new Reservation(Choice.NoAccommodation)
-                    )
-                ).IsEqualTo(240);
-        }
-
-        [Test]
-        public void PriceCalculatorReturnsSingleReservationTotalAmount()
-        {
-            var priceCalculator = new PriceCalculator();
+            //Given
             var reservation = new Reservation(Choice.Single);
 
-            Check.That(priceCalculator.TotalAmount(reservation)).IsEqualTo(610);
+            //Then
+            Check.That(
+                PriceCalculator.TotalAmount(
+                    reservation
+                )).IsEqualTo(610);
         }
 
         [Test]
-        public void PriceCalculatorReturnsTwinReservationTotalAmount()
+        public void TwinChoiceTotalAmount()
         {
-            var priceCalculator = new PriceCalculator();
+            //Given
             var reservation = new Reservation(Choice.Twin);
 
-            Check.That(priceCalculator.TotalAmount(reservation)).IsEqualTo(510);
+            //Then
+            Check.That(
+                PriceCalculator.TotalAmount(
+                    reservation
+                )).IsEqualTo(510);
         }
 
         [Test]
-        public void PriceCalculatorReturnsNoAccommodationReservationTotalAmount()
+        public void TripleChoiceTotalAmount()
         {
-            var priceCalculator = new PriceCalculator();
+            //Given
+            var reservation = new Reservation(Choice.Triple);
+
+            //Then
+            Check.That(
+                PriceCalculator.TotalAmount(
+                    reservation
+                )).IsEqualTo(410);
+        }
+
+        [Test]
+        public void NoAccommodationChoiceTotalAmount()
+        {
+            //Given
             var reservation = new Reservation(Choice.NoAccommodation);
 
-            Check.That(priceCalculator.TotalAmount(reservation)).IsEqualTo(240);
+            //Then
+            Check.That(
+                PriceCalculator.TotalAmount(
+                    reservation
+                )).IsEqualTo(240);
         }
 
         [Test]
-        public void PriceCalculatorReturnsTwin_1_MissingMeal_ReservationTotalAmount()
+        public void PriceCalculatorReturnsTwinChoice_Missing_1_Meal_TotalAmount()
         {
-            var priceCalculator = new PriceCalculator();
-            var reservation = new Reservation(Choice.Twin, 1);
+            //Given
+            var reservation = new Reservation(Choice.Twin, missingMeals: 1);
 
-            Check.That(priceCalculator.TotalAmount(reservation)).IsEqualTo(470);
+            //Then
+            Check.That(
+                PriceCalculator.TotalAmount(
+                    reservation
+                )).IsEqualTo(470);
         }
     }
 }

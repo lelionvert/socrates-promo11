@@ -11,83 +11,76 @@ namespace Socrates.Tests.RegistrationLibraryTests
     class ScenariiTests
     {
         [Test]
-        public void VictoriaRegistersForTriple()
+        public void VictoriaRegistersForTripleChoice()
         {
-            var checkIn = new CheckTime(
-                DayOfWeek.Thursday,
-                "21:00"
-            );
-            var checkOut = new CheckTime(
-                DayOfWeek.Sunday,
-                "15:00"
-            );
-            
-            Check.That(
-                new PriceCalculator().TotalAmount(
-                    new Reservation(Choice.Triple, checkIn, checkOut)
-                ))
-            .IsEqualTo(410);
+            //Given / Then
+            var reservation = new Reservation(
+                        choice: Choice.Triple,
+                        checkin: new CheckTime(
+                            DayOfWeek.Thursday,
+                            "21:00"
+                        ),
+                        checkout: new CheckTime(
+                            DayOfWeek.Sunday,
+                            "15:00"
+                        ));
+            //Then
+            Check.That(PriceCalculator.TotalAmount(reservation) == 410);
         }
 
         [Test]
-        public void JeanPierreRegistersForNoAccommodation()
+        public void JeanPierreRegistersForNoAccommodationChoice()
         {
-            var checkIn = new CheckTime(
-                DayOfWeek.Thursday,
-                "18:00"
-            );
-            var checkOut = new CheckTime(
-                DayOfWeek.Sunday,
-                "14:00"
-            );
-
-            Check.That(
-                new PriceCalculator().TotalAmount(
-                    new Reservation(Choice.NoAccommodation, checkIn, checkOut)
-                ))
-            .IsEqualTo(240);
+            //Given / Then
+            var reservation = new Reservation(
+                        choice: Choice.NoAccommodation,
+                        checkin: new CheckTime(
+                            DayOfWeek.Thursday,
+                            "18:00"
+                        ),
+                        checkout: new CheckTime(
+                            DayOfWeek.Sunday,
+                            "14:00"
+                        ));
+            //Then
+            Check.That(PriceCalculator.TotalAmount(reservation) == 240);
         }
 
         [Test]
         public void SarahRegistersForTwinChoice()
         {
-            var checkIn = new CheckTime(
-                DayOfWeek.Thursday,
-                "22:00"
-            );
-            var checkOut = new CheckTime(
-                DayOfWeek.Sunday,
-                "14:30"
-            );
-
-            Check.That(
-                new PriceCalculator().TotalAmount(
-                    new Reservation(Choice.Twin, checkIn, checkOut)
-                ))
-            .IsEqualTo(510);
+            //Given / Then
+            var reservation = new Reservation(
+                        choice: Choice.Twin,
+                        checkin: new CheckTime(
+                            DayOfWeek.Thursday,
+                            "22:00"
+                        ),
+                        checkout: new CheckTime(
+                            DayOfWeek.Sunday,
+                            "14:30"
+                        ));
+            //Then
+            Check.That(PriceCalculator.TotalAmount(reservation) == 510);
         }
 
         [Test]
-        public void MichelRegistersForTwin_1_MissingMeal()
+        public void MichelRegistersForTwinChoice_Missing_1_Meal()
         {
-            var checkIn = new CheckTime(
-                DayOfWeek.Friday,
-                "8:00"
-                );
-            var checkOut = new CheckTime(
-                DayOfWeek.Sunday,
-                "14:30"
-                );
+            //Given / Then
             var reservation = new Reservation(
-                Choice.Twin, checkIn, checkOut,
-                missingMeals: 1
-                );
-            var priceCalculator = new PriceCalculator();
-
-            Check.That(
-                priceCalculator.TotalAmount(reservation)
-                )
-            .IsEqualTo(470);
+                        choice: Choice.Twin,
+                        checkin: new CheckTime(
+                            DayOfWeek.Friday,
+                            "8:00"
+                        ),
+                        checkout: new CheckTime(
+                            DayOfWeek.Sunday,
+                            "14:30"
+                        ),
+                        missingMeals: 1);
+            //Then
+            Check.That(PriceCalculator.TotalAmount(reservation) == 470);
         }
     }
 }
