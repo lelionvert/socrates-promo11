@@ -76,5 +76,19 @@ public class ScenariosTest {
         assertThat(totalAmount).isEqualTo(570);
     }
 
+    @Test
+    public void scenario_price_minus_two_meals_romane_twin_choice_arrives_friday_and_leaves_saturday() {
+        // Given
+        CheckIn romaneCheckIn = new CheckIn("Friday", "7h");
+        CheckOut romaneCheckOut = new CheckOut("Saturday", "19h");
+        Participant romane = new Participant("Romane", romaneCheckIn, romaneCheckOut, Choice.TWIN);
+
+        // When
+        int totalAmount = romane.calculateTotalAmount();
+
+        // Then
+        assertThat(totalAmount).isEqualTo(430);
+    }
+
 
 }

@@ -16,6 +16,9 @@ public class Participant {
     }
 
     public int calculateTotalAmount() {
+        if (checkIn.getArrivalDay() == "Friday" && checkOut.getDepartureDay() == "Saturday") {
+            return choice.getPrice() - MEAL_PRICE*2;
+        }
         if (checkIn.getArrivalDay() == "Friday" || checkOut.getDepartureDay() == "Saturday") {
             return choice.getPrice() - MEAL_PRICE;
         }
