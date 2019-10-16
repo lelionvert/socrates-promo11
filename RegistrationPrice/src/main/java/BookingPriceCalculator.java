@@ -17,13 +17,21 @@ class BookingPriceCalculator {
         return reduction;
     }
 
+    private static boolean missThursdayMeal(DayOfWeek checkInDay) {
+        return !checkInDay.equals(DayOfWeek.THURSDAY);
+    }
+
+    private static boolean missSundayMeal(DayOfWeek checkOutDay) {
+        return !checkOutDay.equals(DayOfWeek.SUNDAY);
+    }
+
     private static boolean missTwoMeals(DayOfWeek checkInDay, DayOfWeek checkOutDay) {
-        return !checkInDay.equals(DayOfWeek.THURSDAY)
-                && !checkOutDay.equals(DayOfWeek.SUNDAY);
+        return missThursdayMeal(checkInDay)
+                && missSundayMeal(checkOutDay);
     }
 
     static boolean missOneMeal(DayOfWeek checkInDay, DayOfWeek checkOutDay) {
-        return !checkInDay.equals(DayOfWeek.THURSDAY)
-                || !checkOutDay.equals(DayOfWeek.SUNDAY);
+        return missThursdayMeal(checkInDay)
+                || missSundayMeal(checkOutDay);
     }
 }

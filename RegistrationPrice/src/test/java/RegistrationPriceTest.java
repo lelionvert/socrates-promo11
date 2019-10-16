@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class RegistrationPriceTest {
     @Test
-    void validate_scenario_1_victoria() {
+    void validate_scenario_victoria_full_price_triple_choice() {
         String checkInDateThursday = "2019-10-17 21h00";
         String checkOutDateSunday = "2019-10-20 15h00";
 
@@ -15,7 +15,7 @@ class RegistrationPriceTest {
     }
 
     @Test
-    void validate_scenario_1_jp() {
+    void validate_scenario_jp_2019_full_price_no_accommodation_choice() {
         String checkInDateThursday = "2019-10-17 18h00";
         String checkOutDateSunday = "2019-10-20 14h00";
 
@@ -26,7 +26,7 @@ class RegistrationPriceTest {
     }
 
     @Test
-    void validate_scenario_1_sarah() {
+    void validate_scenario_sarah_2019_full_price_twin_choice() {
         String checkInDateThursday = "2019-10-17 22h00";
         String checkOutDateSunday = "2019-10-20 14h30";
 
@@ -37,7 +37,7 @@ class RegistrationPriceTest {
     }
 
     @Test
-    void validate_scenario_2_Michel() {
+    void validate_scenario_michel_2019_refund_one_meal() {
         String checkInDateFriday = "2019-10-18 08h00";
         String checkOutDateSunday = "2019-10-20 14h30";
 
@@ -48,7 +48,7 @@ class RegistrationPriceTest {
     }
 
     @Test
-    void validate_scenario_2_loghan() {
+    void validate_scenario_loghan_2019_refund_one_meal() {
         String checkInDateThursday = "2019-10-17 19h00";
         String checkOutDateSaturday = "2019-10-19 20h00";
 
@@ -59,7 +59,7 @@ class RegistrationPriceTest {
     }
 
     @Test
-    void validate_scenario_3_romane() {
+    void validate_scenario_romane_2019_refund_two_meals() {
         String checkInDateFriday = "2019-10-18 07h00";
         String checkOutDateSaturday = "2019-10-19 19h00";
 
@@ -70,7 +70,7 @@ class RegistrationPriceTest {
     }
 
     @Test
-    void validate_scenario_3_paul() {
+    void validate_scenario_paul_2019_refund_two_meals() {
         String checkInDateFriday = "2019-10-18 09h00";
         String checkOutDateSaturday = "2019-10-19 18h00";
 
@@ -81,7 +81,7 @@ class RegistrationPriceTest {
     }
 
     @Test
-    void validate_scenario_4_raphael() {
+    void validate_scenario_raphael_2020_refund_two_meals() {
         String checkInDateFriday = "2020-10-23 08h00";
         String checkOutDateSaturday = "2020-10-24 18h00";
 
