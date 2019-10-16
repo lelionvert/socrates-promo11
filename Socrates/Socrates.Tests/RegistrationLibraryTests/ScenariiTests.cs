@@ -49,6 +49,25 @@ namespace Socrates.Tests.RegistrationLibraryTests
         }
 
         [Test]
+        public void SarahRegistersForTwinChoice()
+        {
+            var checkIn = new CheckTime(
+                DayOfWeek.Thursday,
+                "22:00"
+            );
+            var checkOut = new CheckTime(
+                DayOfWeek.Sunday,
+                "14:30"
+            );
+
+            Check.That(
+                new PriceCalculator().TotalAmount(
+                    new Reservation(Choice.Twin, checkIn, checkOut)
+                ))
+            .IsEqualTo(510);
+        }
+
+        [Test]
         public void MichelRegistersForTwin_1_MissingMeal()
         {
             var checkIn = new CheckTime(

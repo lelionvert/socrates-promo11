@@ -6,8 +6,6 @@ namespace RegistrationLibrary
 {
     public class PriceCalculator
     {
-        //private Reservation reservation;
-
         public PriceCalculator()
         {
         }
