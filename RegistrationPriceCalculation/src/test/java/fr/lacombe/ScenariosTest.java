@@ -9,8 +9,8 @@ public class ScenariosTest {
     @Test
     public void scenario_complete_price_victoria_triple_choice_arrives_thursday_and_leaves_sunday() {
         // Given
-        CheckIn victoriaCheckIn = new CheckIn("Thursday", "21h");
-        CheckOut victoriaCheckOut = new CheckOut("Sunday", "15h");
+        CheckIn victoriaCheckIn = new CheckIn("2019-10-17 21:00");
+        CheckOut victoriaCheckOut = new CheckOut("2019-10-20 15:00");
         Participant victoria = new Participant("Victoria", victoriaCheckIn, victoriaCheckOut, Choice.TRIPLE);
 
         // When
@@ -23,8 +23,8 @@ public class ScenariosTest {
     @Test
     public void scenario_complete_price_jp_no_accomodation_choice_arrives_thursday_and_leaves_sunday() {
         // Given
-        CheckIn jpCheckIn = new CheckIn("Thursday", "18h");
-        CheckOut jpCheckOut = new CheckOut("Sunday", "14h");
+        CheckIn jpCheckIn = new CheckIn("2019-10-17 18:00");
+        CheckOut jpCheckOut = new CheckOut("2019-10-20 14:00");
         Participant jp = new Participant("J-P", jpCheckIn, jpCheckOut, Choice.NO_ACCOMMODATION);
 
         // When
@@ -37,8 +37,8 @@ public class ScenariosTest {
     @Test
     public void scenario_complete_price_sarah_twin_choice_arrives_thursday_and_leaves_sunday() {
         // Given
-        CheckIn sarahCheckIn = new CheckIn("Thursday", "22h");
-        CheckOut sarahCheckOut = new CheckOut("Sunday", "14h30");
+        CheckIn sarahCheckIn = new CheckIn("2019-10-17 22:00");
+        CheckOut sarahCheckOut = new CheckOut("2019-10-20 14:30");
         Participant sarah = new Participant("Sarah", sarahCheckIn, sarahCheckOut, Choice.TWIN);
 
         // When
@@ -51,8 +51,8 @@ public class ScenariosTest {
     @Test
     public void scenario_price_minus_one_meal_michel_twin_choice_arrives_friday_and_leaves_sunday() {
         // Given
-        CheckIn michelCheckIn = new CheckIn("Friday", "8h");
-        CheckOut michelCheckOut = new CheckOut("Sunday", "14h30");
+        CheckIn michelCheckIn = new CheckIn("2019-10-18 08:00");
+        CheckOut michelCheckOut = new CheckOut("2019-10-20 14:30");
         Participant michel = new Participant("Michel", michelCheckIn, michelCheckOut, Choice.TWIN);
 
         // When
@@ -65,8 +65,8 @@ public class ScenariosTest {
     @Test
     public void scenario_price_minus_one_meal_loghan_single_choice_arrives_thursday_and_leaves_saturday() {
         // Given
-        CheckIn loghanCheckIn = new CheckIn("Thursday", "19h");
-        CheckOut loghanCheckOut = new CheckOut("Saturday", "20h");
+        CheckIn loghanCheckIn = new CheckIn("2019-10-17 19:00");
+        CheckOut loghanCheckOut = new CheckOut("2019-10-19 20:00");
         Participant loghan = new Participant("Loghan", loghanCheckIn, loghanCheckOut, Choice.SINGLE);
 
         // When
@@ -79,8 +79,8 @@ public class ScenariosTest {
     @Test
     public void scenario_price_minus_two_meals_romane_twin_choice_arrives_friday_and_leaves_saturday() {
         // Given
-        CheckIn romaneCheckIn = new CheckIn("Friday", "7h");
-        CheckOut romaneCheckOut = new CheckOut("Saturday", "19h");
+        CheckIn romaneCheckIn = new CheckIn("2019-10-18 07:00");
+        CheckOut romaneCheckOut = new CheckOut("2019-10-19 19:00");
         Participant romane = new Participant("Romane", romaneCheckIn, romaneCheckOut, Choice.TWIN);
 
         // When
@@ -93,8 +93,8 @@ public class ScenariosTest {
     @Test
     public void scenario_price_minus_two_meals_paul_triple_choice_arrives_friday_and_leaves_saturday() {
         // Given
-        CheckIn paulCheckIn = new CheckIn("Friday", "9h");
-        CheckOut paulCheckOut = new CheckOut("Saturday", "18h");
+        CheckIn paulCheckIn = new CheckIn("2019-10-18 09:00");
+        CheckOut paulCheckOut = new CheckOut("2019-10-19 18:00");
         Participant paul = new Participant("Paul", paulCheckIn, paulCheckOut, Choice.TRIPLE);
 
         // When
@@ -107,8 +107,8 @@ public class ScenariosTest {
     @Test
     public void scenario_price_minus_two_meals_raphael_twin_choice_arrives_friday_and_leaves_saturday() {
         // Given
-        CheckIn raphaelCheckIn = new CheckIn("Friday 2020-10-23", "8h");
-        CheckOut raphaelCheckOut = new CheckOut("Saturday 2020-10-24", "18h");
+        CheckIn raphaelCheckIn = new CheckIn("2020-10-23 08:00");
+        CheckOut raphaelCheckOut = new CheckOut("2020-10-24 18:00");
         Participant raphael = new Participant("Raphaël", raphaelCheckIn, raphaelCheckOut, Choice.TWIN);
 
         // When

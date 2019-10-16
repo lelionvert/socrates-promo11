@@ -1,15 +1,15 @@
 package fr.lacombe;
 
-public class CheckIn {
-    private String arrivalDay;
-    private String arrivalHour;
+import java.time.DayOfWeek;
 
-    public CheckIn(String arrivalDay, String arrivalHour) {
-        this.arrivalDay = arrivalDay;
-        this.arrivalHour = arrivalHour;
+public class CheckIn {
+    private DateEngine arrivalDate;
+
+    public CheckIn(String arrivalDate) {
+        this.arrivalDate = new DateEngine(arrivalDate);
     }
 
     public boolean arrivalDayIsFriday() {
-        return "Friday".equals(arrivalDay);
+        return DayOfWeek.FRIDAY.equals(arrivalDate.getDay());
     }
 }

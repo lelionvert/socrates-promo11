@@ -1,15 +1,15 @@
 package fr.lacombe;
 
-public class CheckOut {
-    private String departureDay;
-    private String departureHour;
+import java.time.DayOfWeek;
 
-    public CheckOut(String departureDay, String departureHour) {
-        this.departureDay = departureDay;
-        this.departureHour = departureHour;
+public class CheckOut {
+    private DateEngine departureDate;
+
+    public CheckOut(String departureDate) {
+        this.departureDate = new DateEngine(departureDate);
     }
 
     public boolean departureDayIsSaturday() {
-        return "Saturday".equals(departureDay);
+        return DayOfWeek.SATURDAY.equals(departureDate.getDay());
     }
 }

@@ -20,4 +20,5 @@ public class DateEngine {
     public DayOfWeek getDay() {
         return date.getDayOfWeek();
     }
+
 }
