@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -23,5 +24,17 @@ class RegistrationPriceTest {
                 ChoiceAccomodation.NO_ACCOMODATION);
 
         assertThat(SocratesRegistrationPricer.chargesTotalAmount(jp)).isEqualTo(240);
+    }
+
+    @Test
+    @Disabled("WIP")
+    void validate_scenario_2_Michel() {
+        String checkInDateFriday = "2019-10-18 8h00";
+        String checkOutDateSunday = "2019-10-20 14h30";
+
+        CheckedInParticipant michel = CheckedInParticipantBuilder.create(checkInDateFriday, checkOutDateSunday,
+                ChoiceAccomodation.DOUBLE);
+
+        assertThat(SocratesRegistrationPricer.chargesTotalAmount(michel)).isEqualTo(470);
     }
 }

@@ -14,4 +14,9 @@ class ChoiceAccommodationTest {
     void get_price_from_accommodation_choice_TRIPLE() {
         Assertions.assertThat(ChoiceAccomodation.TRIPLE.getPrice()).isEqualTo(410);
     }
+
+    @Test
+    void get_price_for_accommodation_choice_DOUBLE() {
+        Assertions.assertThat(ChoiceAccomodation.DOUBLE.getPrice()).isEqualTo(510);
+    }
 }
