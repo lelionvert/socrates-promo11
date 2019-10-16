@@ -10,6 +10,12 @@ namespace Socrates.Tests.RegistrationLibraryTests
     [TestFixture]
     class ScenariiTests
     {
+        /*
+         * 
+         *  SCENARIO 1
+         *  
+         */
+
         [Test]
         public void VictoriaRegistersForTripleChoice()
         {
@@ -64,6 +70,12 @@ namespace Socrates.Tests.RegistrationLibraryTests
             Check.That(PriceCalculator.TotalAmount(reservation) == 510);
         }
 
+        /*
+         * 
+         *  SCENARIO 2
+         *  
+         */
+
         [Test]
         public void MichelRegistersForTwinChoice_Missing_1_Meal()
         {
@@ -81,6 +93,25 @@ namespace Socrates.Tests.RegistrationLibraryTests
                         missingMeals: 1);
             //Then
             Check.That(PriceCalculator.TotalAmount(reservation) == 470);
+        }
+
+        [Test]
+        public void LoganRegistersForSingleChoice_Missing_1_Meal()
+        {
+            //Given / Then
+            var reservation = new Reservation(
+                        choice: Choice.Single,
+                        checkin: new CheckTime(
+                            DayOfWeek.Thursday,
+                            "19:00"
+                        ),
+                        checkout: new CheckTime(
+                            DayOfWeek.Saturday,
+                            "20:00"
+                        ),
+                        missingMeals: 1);
+            //Then
+            Check.That(PriceCalculator.TotalAmount(reservation) == 570);
         }
     }
 }
