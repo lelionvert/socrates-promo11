@@ -51,7 +51,7 @@ class BookingPriceCalculatorTest {
                 checkOutDateSaturday,
                 ChoiceAccommodation.TWIN);
 
-        assertThat(BookingPriceCalculator.calculateRefundAmount(booking))
+        assertThat(BookingPriceCalculator.calculateRefundAmount(booking.getCheckInDay(), booking.getCheckOutDay()))
                 .isEqualTo(80);
     }
 
