@@ -23,7 +23,6 @@ public class ScenariosTest
     }
 
     @Test
-    @Ignore
     public void scenario_complete_price_jp_no_accomodation_choice_arrives_thursday_and_leaves_sunday()
     {
         // Given
@@ -36,6 +35,21 @@ public class ScenariosTest
 
         // Then
         assertThat(totalAmount).isEqualTo(240);
+    }
+
+    @Test
+    public void scenario_complete_price_sarah_twin_choice_arrives_thursday_and_leaves_sunday()
+    {
+        // Given
+        CheckIn sarahCheckIn = new CheckIn("Thursday", "22h");
+        CheckOut sarahCheckOut = new CheckOut("Sunday", "14h30");
+        Participant sarah = new Participant("Sarah", sarahCheckIn, sarahCheckOut, Choice.TWIN);
+
+        // When
+        int totalAmount = sarah.getTotalAmount();
+
+        // Then
+        assertThat(totalAmount).isEqualTo(510);
     }
 
 
