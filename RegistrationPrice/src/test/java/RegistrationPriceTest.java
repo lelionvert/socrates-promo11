@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,10 +9,10 @@ class RegistrationPriceTest {
         String checkInDateThursday = "2019-10-17 21h00";
         String checkOutDateSunday = "2019-10-20 15h00";
 
-        CheckedInParticipant victoria = CheckedInParticipantHelper.create(checkInDateThursday, checkOutDateSunday,
+        Booking victoria = BookingHelper.create(checkInDateThursday, checkOutDateSunday,
                 ChoiceAccommodation.TRIPLE);
 
-        assertThat(SocratesRegistrationPricer.chargesTotalAmount(victoria)).isEqualTo(410);
+        assertThat(BookingPriceCalculator.chargesTotalAmount(victoria)).isEqualTo(410);
     }
 
     @Test
@@ -19,10 +20,10 @@ class RegistrationPriceTest {
         String checkInDateThursday = "2019-10-17 18h00";
         String checkOutDateSunday = "2019-10-20 14h00";
 
-        CheckedInParticipant jp = CheckedInParticipantHelper.create(checkInDateThursday, checkOutDateSunday,
+        Booking jp = BookingHelper.create(checkInDateThursday, checkOutDateSunday,
                 ChoiceAccommodation.NO_ACCOMMODATION);
 
-        assertThat(SocratesRegistrationPricer.chargesTotalAmount(jp)).isEqualTo(240);
+        assertThat(BookingPriceCalculator.chargesTotalAmount(jp)).isEqualTo(240);
     }
 
     @Test
@@ -30,10 +31,10 @@ class RegistrationPriceTest {
         String checkInDateThursday = "2019-10-17 22h00";
         String checkOutDateSunday = "2019-10-20 14h30";
 
-        CheckedInParticipant sarah = CheckedInParticipantHelper.create(checkInDateThursday, checkOutDateSunday,
+        Booking sarah = BookingHelper.create(checkInDateThursday, checkOutDateSunday,
                 ChoiceAccommodation.TWIN);
 
-        assertThat(SocratesRegistrationPricer.chargesTotalAmount(sarah)).isEqualTo(510);
+        assertThat(BookingPriceCalculator.chargesTotalAmount(sarah)).isEqualTo(510);
     }
 
     @Test
@@ -41,10 +42,10 @@ class RegistrationPriceTest {
         String checkInDateFriday = "2019-10-18 08h00";
         String checkOutDateSunday = "2019-10-20 14h30";
 
-        CheckedInParticipant michel = CheckedInParticipantHelper.create(checkInDateFriday, checkOutDateSunday,
+        Booking michel = BookingHelper.create(checkInDateFriday, checkOutDateSunday,
                 ChoiceAccommodation.TWIN);
 
-        assertThat(SocratesRegistrationPricer.chargesTotalAmount(michel)).isEqualTo(470);
+        assertThat(BookingPriceCalculator.chargesTotalAmount(michel)).isEqualTo(470);
     }
 
     @Test
@@ -52,8 +53,21 @@ class RegistrationPriceTest {
         String checkInDateThursday = "2019-10-17 19h00";
         String checkOutDateSaturday = "2019-10-19 20h00";
 
-        CheckedInParticipant loghan = CheckedInParticipantHelper.create(checkInDateThursday, checkOutDateSaturday,
+        Booking loghan = BookingHelper.create(checkInDateThursday,
+                checkOutDateSaturday,
                 ChoiceAccommodation.SINGLE);
-        assertThat(SocratesRegistrationPricer.chargesTotalAmount(loghan)).isEqualTo(570);
+        assertThat(BookingPriceCalculator.chargesTotalAmount(loghan)).isEqualTo(570);
+    }
+
+    @Test
+    @Disabled("Not the moment")
+    void validate_scenario_3_romane() {
+        String checkInDateFriday = "2019-10-18 07h00";
+        String checkOutDateSaturday = "2019-10-19 19h00";
+
+        Booking romane = BookingHelper.create(checkInDateFriday,
+                checkOutDateSaturday,
+                ChoiceAccommodation.TWIN);
+        assertThat(BookingPriceCalculator.chargesTotalAmount(romane)).isEqualTo(430);
     }
 }

@@ -2,14 +2,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-class CheckedInParticipantHelper {
+class BookingHelper {
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH'h'mm");
 
-    static CheckedInParticipant create(String checkInDateThursday, String checkOutDateSunday, ChoiceAccommodation triple) {
+    static Booking create(String checkInDateThursday, String checkOutDateSunday, ChoiceAccommodation triple) {
         LocalDateTime checkInDateTime = createDateFromFormat(checkInDateThursday);
         LocalDateTime checkOutDateTime = createDateFromFormat(checkOutDateSunday);
 
-        return new CheckedInParticipant(checkInDateTime, checkOutDateTime, triple);
+        return new Booking(checkInDateTime, checkOutDateTime, triple);
     }
 
     private static LocalDateTime createDateFromFormat(String dateFormat) {

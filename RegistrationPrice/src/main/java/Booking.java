@@ -2,12 +2,12 @@ import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class CheckedInParticipant {
+public class Booking {
     private LocalDateTime checkInDateTime;
     private LocalDateTime checkOutDateTime;
     private final ChoiceAccommodation choice;
 
-    CheckedInParticipant(LocalDateTime checkInDateTime, LocalDateTime checkOutDateTime, ChoiceAccommodation triple) {
+    Booking(LocalDateTime checkInDateTime, LocalDateTime checkOutDateTime, ChoiceAccommodation triple) {
 
         this.checkInDateTime = checkInDateTime;
         this.checkOutDateTime = checkOutDateTime;
@@ -38,7 +38,7 @@ public class CheckedInParticipant {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CheckedInParticipant that = (CheckedInParticipant) o;
+        Booking that = (Booking) o;
         return Objects.equals(checkInDateTime, that.checkInDateTime) &&
                 Objects.equals(checkOutDateTime, that.checkOutDateTime) &&
                 choice == that.choice;

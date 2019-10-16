@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 class ChoiceAccommodationTest {
     @Test
     void checked_in_participant_has_correct_choice_when_requested() {
-        CheckedInParticipant pierre = CheckedInParticipantHelper.create("2019-10-17 21h00",
+        Booking pierre = BookingHelper.create("2019-10-17 21h00",
                 "2019-10-17 21h00", ChoiceAccommodation.TRIPLE);
 
         Assertions.assertThat(pierre.getChoice()).isEqualTo(ChoiceAccommodation.TRIPLE);
