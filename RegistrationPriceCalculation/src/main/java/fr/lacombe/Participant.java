@@ -16,7 +16,6 @@ public class Participant {
     }
 
     public int calculateTotalAmount() {
-        if(name == "Raphaël") return 430;
         return choice.getPrice() - calculateMealsToRefund();
     }
 
