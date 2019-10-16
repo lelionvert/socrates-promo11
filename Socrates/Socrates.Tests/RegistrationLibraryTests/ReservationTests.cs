@@ -57,7 +57,7 @@ namespace Socrates.Tests.RegistrationLibraryTests
         [Test]
         public void VictoriaReservationMissingNoMealAccordingToChecks()
         {
-            //Given / Then
+            //Given / When
             var reservation = new Reservation(
                         choice: Choice.Triple,
                         checkin: new CheckTime(
@@ -68,13 +68,14 @@ namespace Socrates.Tests.RegistrationLibraryTests
                             DayOfWeek.Sunday,
                             "15:00"
             ));
+            //Then
             Check.That(reservation.MissingMeals).IsEqualTo(0);
         }
 
         [Test]
         public void JeanPierreReservationMissingNoMealAccordingToChecks()
         {
-            //Given / Then
+            //Given / When
             var reservation = new Reservation(
                         choice: Choice.NoAccommodation,
                         checkin: new CheckTime(
@@ -85,8 +86,26 @@ namespace Socrates.Tests.RegistrationLibraryTests
                             DayOfWeek.Sunday,
                             "14:00"
             ));
+            //Then
             Check.That(reservation.MissingMeals).IsEqualTo(0);
         }
 
+        [Test]
+        public void SarahReservationMissingNoMealAccordingToChecks()
+        {
+            //Given / When
+            var reservation = new Reservation(
+                        choice: Choice.NoAccommodation,
+                        checkin: new CheckTime(
+                            DayOfWeek.Thursday,
+                            "22:00"
+                        ),
+                        checkout: new CheckTime(
+                            DayOfWeek.Sunday,
+                            "14:30"
+            ));
+            //Then
+            Check.That(reservation.MissingMeals).IsEqualTo(0);
+        }
     }
 }
