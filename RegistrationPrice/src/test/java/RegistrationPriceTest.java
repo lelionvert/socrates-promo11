@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -60,7 +59,6 @@ class RegistrationPriceTest {
     }
 
     @Test
-    @Disabled("Not the moment")
     void validate_scenario_3_romane() {
         String checkInDateFriday = "2019-10-18 07h00";
         String checkOutDateSaturday = "2019-10-19 19h00";
@@ -70,4 +68,6 @@ class RegistrationPriceTest {
                 ChoiceAccommodation.TWIN);
         assertThat(BookingPriceCalculator.chargesTotalAmount(romane)).isEqualTo(430);
     }
+
+
 }
