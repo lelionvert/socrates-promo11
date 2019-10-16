@@ -5,8 +5,12 @@ class BookingPriceCalculator {
     private static final int MEAL_PRICE = 40;
 
     static int chargesTotalAmount(Booking booking) {
+        int refundAmount = calculateRefundAmount(booking.getCheckInDay(), booking.getCheckOutDay());
+        if (booking.getChoice() == ChoiceAccommodation.SINGLE_DOUBLE) {
+            refundAmount = calculateRefundAmount();
+        }
         return booking.getBasicChoicePrice() -
-                calculateRefundAmount(booking.getCheckInDay(), booking.getCheckOutDay());
+                refundAmount;
     }
 
     static int calculateRefundAmount() {

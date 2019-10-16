@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -93,7 +92,7 @@ class RegistrationPriceTest {
     }
 
     @Test
-    @Disabled("Work In Progress")
+//    @Disabled("Work In Progress")
     void validate_scenario_udyr_plus_one_2020_refund_80() {
         String checkInDateThursday = "2020-10-22 17h45";
         String checkOutDateSaturday = "2020-10-24 14h00";
