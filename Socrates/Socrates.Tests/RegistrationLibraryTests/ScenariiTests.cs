@@ -23,9 +23,9 @@ namespace Socrates.Tests.RegistrationLibraryTests
             );
             
             Check.That(
-                new Reservation(Choice.Triple, checkIn, checkOut)
-                .ChoiceAmount
-                )
+                new PriceCalculator().TotalAmount(
+                    new Reservation(Choice.Triple, checkIn, checkOut)
+                ))
             .IsEqualTo(410);
         }
 

@@ -13,11 +13,13 @@ namespace RegistrationLibrary
         }
 
         public int TotalAmount(Reservation reservation) {
-            var choiceAmount = reservation.ChoiceAmount;
+            var choiceAmount = (int)reservation.Choice;
             var remise = reservation.MissingMeals * 40;
             
 
             return choiceAmount - remise;
         }
     }
+
+
 }

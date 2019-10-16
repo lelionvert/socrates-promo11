@@ -4,18 +4,23 @@ namespace RegistrationLibrary
 {
     public class Reservation
     {
-        private Choice choice;
-        private CheckTime checkin;
-        private CheckTime checkout;
+        public Choice Choice
+        {
+            get;
+            private set;
+        }
         public int MissingMeals
         {
             get;
             private set;
         }
 
+        private CheckTime checkin;
+        private CheckTime checkout;
+
         public Reservation(Choice choice)
         {
-            this.choice = choice;
+            this.Choice = choice;
         }
 
         public Reservation(Choice choice, int missingMeals) : this(choice)
@@ -25,7 +30,7 @@ namespace RegistrationLibrary
 
         public Reservation(Choice choice, CheckTime checkin, CheckTime checkout)
         {
-            this.choice = choice;
+            this.Choice = choice;
             this.checkin = checkin;
             this.checkout = checkout;
         }
@@ -35,6 +40,9 @@ namespace RegistrationLibrary
             this.MissingMeals = missingMeals;
         }
 
-        public int ChoiceAmount { get { return (int)choice; } }
+        public int ChoiceAmount
+        {
+            get { return (int)Choice; }
+        }
     }
 }
