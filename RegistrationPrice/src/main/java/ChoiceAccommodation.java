@@ -1,5 +1,6 @@
 public enum ChoiceAccommodation {
     SINGLE(610),
+    SINGLE_DOUBLE(940),
     TWIN(510),
     TRIPLE(410),
     NO_ACCOMMODATION(240);
