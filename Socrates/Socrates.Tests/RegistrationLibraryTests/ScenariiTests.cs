@@ -49,18 +49,20 @@ namespace Socrates.Tests.RegistrationLibraryTests
         }
 
         [Test]
-        [Ignore("W I P")]
-        public void MichelRegistersForTwinWithout_1_Meal()
+        public void MichelRegistersForTwin_1_MissingMeal()
         {
             var checkIn = new CheckTime(
                 DayOfWeek.Friday,
                 "8:00"
-            );
+                );
             var checkOut = new CheckTime(
                 DayOfWeek.Sunday,
                 "14:30"
-            );
-            var reservation = new Reservation(Choice.Twin, checkIn, checkOut);
+                );
+            var reservation = new Reservation(
+                Choice.Twin, checkIn, checkOut,
+                missingMeals: 1
+                );
             var priceCalculator = new PriceCalculator();
 
             Check.That(

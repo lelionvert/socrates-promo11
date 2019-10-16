@@ -6,7 +6,7 @@ namespace RegistrationLibrary
 {
     public class PriceCalculator
     {
-        private Reservation reservation;
+        //private Reservation reservation;
 
         public PriceCalculator()
         {
@@ -14,8 +14,10 @@ namespace RegistrationLibrary
 
         public int TotalAmount(Reservation reservation) {
             var choiceAmount = reservation.ChoiceAmount;
+            var remise = reservation.MissingMeals * 40;
+            
 
-            return choiceAmount;
+            return choiceAmount - remise;
         }
     }
 }
