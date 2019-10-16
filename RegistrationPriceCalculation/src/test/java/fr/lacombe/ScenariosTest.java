@@ -14,7 +14,7 @@ public class ScenariosTest {
         Participant victoria = new Participant("Victoria", victoriaCheckIn, victoriaCheckOut, Choice.TRIPLE);
 
         // When
-        int totalAmount = victoria.getTotalAmount();
+        int totalAmount = victoria.calculateTotalAmount();
 
         // Then
         assertThat(totalAmount).isEqualTo(410);
@@ -28,7 +28,7 @@ public class ScenariosTest {
         Participant jp = new Participant("J-P", jpCheckIn, jpCheckOut, Choice.NO_ACCOMMODATION);
 
         // When
-        int totalAmount = jp.getTotalAmount();
+        int totalAmount = jp.calculateTotalAmount();
 
         // Then
         assertThat(totalAmount).isEqualTo(240);
@@ -42,7 +42,7 @@ public class ScenariosTest {
         Participant sarah = new Participant("Sarah", sarahCheckIn, sarahCheckOut, Choice.TWIN);
 
         // When
-        int totalAmount = sarah.getTotalAmount();
+        int totalAmount = sarah.calculateTotalAmount();
 
         // Then
         assertThat(totalAmount).isEqualTo(510);
@@ -56,7 +56,7 @@ public class ScenariosTest {
         Participant michel = new Participant("Michel", michelCheckIn, michelCheckOut, Choice.TWIN);
 
         // When
-        int totalAmount = michel.getTotalAmount();
+        int totalAmount = michel.calculateTotalAmount();
 
         // Then
         assertThat(totalAmount).isEqualTo(470);

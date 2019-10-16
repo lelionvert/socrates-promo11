@@ -2,6 +2,7 @@ package fr.lacombe;
 
 public class Participant {
 
+    public static final int MEAL_PRICE = 40;
     private String name;
     private CheckIn checkIn;
     private CheckOut checkOut;
@@ -14,8 +15,10 @@ public class Participant {
         this.choice = choice;
     }
 
-    public int getTotalAmount() {
-        if (name == "Michel") return 470;
-        return new CalculatorPrice().calculatePrice(this.choice);
+    public int calculateTotalAmount() {
+        if (checkIn.getArrivalDay() == "Friday") {
+            return choice.getPrice() - MEAL_PRICE;
+        }
+        return choice.getPrice();
     }
 }

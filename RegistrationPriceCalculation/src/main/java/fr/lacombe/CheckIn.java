@@ -9,4 +9,7 @@ public class CheckIn {
         this.arrivalHour = arrivalHour;
     }
 
+    public String getArrivalDay() {
+        return arrivalDay;
+    }
 }
