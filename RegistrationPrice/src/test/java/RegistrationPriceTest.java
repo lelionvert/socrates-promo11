@@ -79,4 +79,15 @@ class RegistrationPriceTest {
                 ChoiceAccommodation.TRIPLE);
         assertThat(BookingPriceCalculator.chargesTotalAmount(paul)).isEqualTo(330);
     }
+
+    @Test
+    void validate_scenario_4_raphael() {
+        String checkInDateFriday = "2020-10-23 08h00";
+        String checkOutDateSaturday = "2020-10-24 18h00";
+
+        Booking paul = BookingHelper.create(checkInDateFriday,
+                checkOutDateSaturday,
+                ChoiceAccommodation.TWIN);
+        assertThat(BookingPriceCalculator.chargesTotalAmount(paul)).isEqualTo(430);
+    }
 }
