@@ -187,5 +187,35 @@ namespace Socrates.Tests.RegistrationLibraryTests
             //Then
             Check.That(PriceCalculator.TotalAmount(reservation) == 430);
         }
+
+
+        /*
+         * 
+         *  SCENARIO 5
+         *  
+         */
+
+        [Test]
+        public void CoupleRegistersForSingleDoubleChoice_Missing_2_Meal()
+        {
+            //Given / Then  
+            var reservation = new Reservation(
+                        choice: Choice.SingleDouble,
+                        checkin: new CheckTime(
+                            date: "23 Octobre 2020",
+                            DayOfWeek.Friday,
+                            hour: 8,
+                            min: 0
+                        ),
+                        checkout: new CheckTime(
+                            date: "24 Octobre 2020",
+                            DayOfWeek.Saturday,
+                            hour: 14,
+                            min: 0
+                        ),
+                        missingMeals: 2);
+            //Then
+            Check.That(PriceCalculator.TotalAmount(reservation) == 860);
+        }
     }
 }
