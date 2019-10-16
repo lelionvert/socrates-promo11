@@ -1,3 +1,4 @@
+import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -47,5 +48,9 @@ public class CheckedInParticipant {
                 ", checkOutDateTime=" + checkOutDateTime +
                 ", choice=" + choice +
                 '}';
+    }
+
+    public DayOfWeek getCheckInDay() {
+        return DayOfWeek.FRIDAY;
     }
 }

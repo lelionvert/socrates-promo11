@@ -1,5 +1,5 @@
 public enum ChoiceAccomodation {
-    DOUBLE(510), TRIPLE(410), NO_ACCOMODATION(240);
+    TWIN(510), TRIPLE(410), NO_ACCOMMODATION(240);
 
     private final int price;
 
