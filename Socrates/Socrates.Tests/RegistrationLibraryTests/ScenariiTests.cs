@@ -84,7 +84,7 @@ namespace Socrates.Tests.RegistrationLibraryTests
                         choice: Choice.Twin,
                         checkin: new CheckTime(
                             DayOfWeek.Friday,
-                            "8:00"
+                            "08:00"
                         ),
                         checkout: new CheckTime(
                             DayOfWeek.Sunday,
@@ -112,6 +112,31 @@ namespace Socrates.Tests.RegistrationLibraryTests
                         missingMeals: 1);
             //Then
             Check.That(PriceCalculator.TotalAmount(reservation) == 570);
+        }
+
+        /*
+         * 
+         *  SCENARIO 3
+         *  
+         */
+
+        [Test]
+        public void RomaneRegistersForTwinChoice_Missing_2_Meal()
+        {
+            //Given / Then
+            var reservation = new Reservation(
+                        choice: Choice.Twin,
+                        checkin: new CheckTime(
+                            DayOfWeek.Friday,
+                            "07:00"
+                        ),
+                        checkout: new CheckTime(
+                            DayOfWeek.Saturday,
+                            "19:00"
+                        ),
+                        missingMeals: 2);
+            //Then
+            Check.That(PriceCalculator.TotalAmount(reservation) == 430);
         }
     }
 }
