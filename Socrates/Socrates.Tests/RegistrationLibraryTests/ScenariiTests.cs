@@ -138,5 +138,24 @@ namespace Socrates.Tests.RegistrationLibraryTests
             //Then
             Check.That(PriceCalculator.TotalAmount(reservation) == 430);
         }
+
+        [Test]
+        public void PaulRegistersForTripleChoice_Missing_2_Meal()
+        {
+            //Given / Then
+            var reservation = new Reservation(
+                        choice: Choice.Triple,
+                        checkin: new CheckTime(
+                            DayOfWeek.Friday,
+                            "09:00"
+                        ),
+                        checkout: new CheckTime(
+                            DayOfWeek.Saturday,
+                            "18:00"
+                        ),
+                        missingMeals: 2);
+            //Then
+            Check.That(PriceCalculator.TotalAmount(reservation) == 330);
+        }
     }
 }
