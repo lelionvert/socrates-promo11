@@ -64,7 +64,7 @@ class BookingPriceCalculatorTest {
                 checkOutDateSaturday,
                 ChoiceAccommodation.SINGLE_DOUBLE);
 
-        assertThat(BookingPriceCalculator.calculateRefundAmount(booking))
+        assertThat(BookingPriceCalculator.calculateRefundAmount())
                 .isEqualTo(80);
     }
 }
