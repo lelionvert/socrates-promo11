@@ -42,9 +42,9 @@ namespace Socrates.Tests.RegistrationLibraryTests
             );
 
             Check.That(
-                new Reservation(Choice.NoAccommodation, checkIn, checkOut)
-                .ChoiceAmount
-                )
+                new PriceCalculator().TotalAmount(
+                    new Reservation(Choice.NoAccommodation, checkIn, checkOut)
+                ))
             .IsEqualTo(240);
         }
 

@@ -39,10 +39,5 @@ namespace RegistrationLibrary
         {
             this.MissingMeals = missingMeals;
         }
-
-        public int ChoiceAmount
-        {
-            get { return (int)Choice; }
-        }
     }
 }
