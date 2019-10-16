@@ -8,7 +8,7 @@ class RegistrationPriceTest {
         String checkInDateThursday = "2019-10-17 21h00";
         String checkOutDateSunday = "2019-10-20 15h00";
 
-        CheckedInParticipant victoria = CheckedInParticipantBuilder.create(checkInDateThursday, checkOutDateSunday,
+        CheckedInParticipant victoria = CheckedInParticipantHelper.create(checkInDateThursday, checkOutDateSunday,
                 ChoiceAccommodation.TRIPLE);
 
         assertThat(SocratesRegistrationPricer.chargesTotalAmount(victoria)).isEqualTo(410);
@@ -19,7 +19,7 @@ class RegistrationPriceTest {
         String checkInDateThursday = "2019-10-17 18h00";
         String checkOutDateSunday = "2019-10-20 14h00";
 
-        CheckedInParticipant jp = CheckedInParticipantBuilder.create(checkInDateThursday, checkOutDateSunday,
+        CheckedInParticipant jp = CheckedInParticipantHelper.create(checkInDateThursday, checkOutDateSunday,
                 ChoiceAccommodation.NO_ACCOMMODATION);
 
         assertThat(SocratesRegistrationPricer.chargesTotalAmount(jp)).isEqualTo(240);
@@ -30,7 +30,7 @@ class RegistrationPriceTest {
         String checkInDateThursday = "2019-10-17 22h00";
         String checkOutDateSunday = "2019-10-20 14h30";
 
-        CheckedInParticipant sarah = CheckedInParticipantBuilder.create(checkInDateThursday, checkOutDateSunday,
+        CheckedInParticipant sarah = CheckedInParticipantHelper.create(checkInDateThursday, checkOutDateSunday,
                 ChoiceAccommodation.TWIN);
 
         assertThat(SocratesRegistrationPricer.chargesTotalAmount(sarah)).isEqualTo(510);
@@ -41,7 +41,7 @@ class RegistrationPriceTest {
         String checkInDateFriday = "2019-10-18 08h00";
         String checkOutDateSunday = "2019-10-20 14h30";
 
-        CheckedInParticipant michel = CheckedInParticipantBuilder.create(checkInDateFriday, checkOutDateSunday,
+        CheckedInParticipant michel = CheckedInParticipantHelper.create(checkInDateFriday, checkOutDateSunday,
                 ChoiceAccommodation.TWIN);
 
         assertThat(SocratesRegistrationPricer.chargesTotalAmount(michel)).isEqualTo(470);
@@ -52,7 +52,7 @@ class RegistrationPriceTest {
         String checkInDateThursday = "2019-10-17 19h00";
         String checkOutDateSaturday = "2019-10-19 20h00";
 
-        CheckedInParticipant loghan = CheckedInParticipantBuilder.create(checkInDateThursday, checkOutDateSaturday,
+        CheckedInParticipant loghan = CheckedInParticipantHelper.create(checkInDateThursday, checkOutDateSaturday,
                 ChoiceAccommodation.SINGLE);
         assertThat(SocratesRegistrationPricer.chargesTotalAmount(loghan)).isEqualTo(570);
     }
