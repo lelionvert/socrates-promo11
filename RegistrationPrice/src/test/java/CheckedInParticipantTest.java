@@ -26,4 +26,15 @@ class CheckedInParticipantTest {
 
         assertThat(michel.getCheckInDay()).isEqualTo(DayOfWeek.THURSDAY);
     }
+
+    @Test
+    void get_correct_check_out_date_sunday() {
+        String checkInThursday = "2019-10-17 08h00";
+        String checkOutSunday = "2019-10-20 14h30";
+
+        CheckedInParticipant michel = CheckedInParticipantBuilder.create(checkInThursday, checkOutSunday,
+                ChoiceAccommodation.TWIN);
+
+        assertThat(michel.getCheckOutDay()).isEqualTo(DayOfWeek.SUNDAY);
+    }
 }
