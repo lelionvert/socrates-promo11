@@ -6,7 +6,12 @@ public enum Choice {
     TRIPLE(410),
     NO_ACCOMMODATION(240);
 
+    private int price;
     Choice(int price) {
+        this.price = price;
+    }
 
+    public int getPrice() {
+        return price;
     }
 }
