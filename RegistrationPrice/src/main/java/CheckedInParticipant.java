@@ -51,6 +51,9 @@ public class CheckedInParticipant {
     }
 
     public DayOfWeek getCheckInDay() {
-        return DayOfWeek.FRIDAY;
+        if (checkInDateTime.getDayOfWeek().equals(DayOfWeek.THURSDAY))
+            return DayOfWeek.THURSDAY;
+        else
+            return DayOfWeek.FRIDAY;
     }
 }
