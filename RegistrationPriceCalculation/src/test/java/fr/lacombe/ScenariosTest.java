@@ -118,5 +118,19 @@ public class ScenariosTest {
         assertThat(totalAmount).isEqualTo(430);
     }
 
+    @Test
+    public void scenario_price_minus_one_meal_for_udyr_and_his_girlfriend_single_double_choice_arrive_thursday_and_leave_sunday() {
+        // Given
+        CheckIn udyrAndHisGirlfriendCheckIn = new CheckIn("2020-10-22 17:45");
+        CheckOut udyrAndHisGirlfriendCheckOut = new CheckOut("2020-10-24 14:00");
+        Participant udyrAndHisGirlfriend = new Participant("Udyr and his girlfriend", udyrAndHisGirlfriendCheckIn, udyrAndHisGirlfriendCheckOut, Choice.SINGLE_DOUBLE);
+
+        // When
+        int totalAmount = udyrAndHisGirlfriend.calculateTotalAmount();
+
+        // Then
+        assertThat(totalAmount).isEqualTo(860);
+    }
+
 
 }

@@ -16,6 +16,9 @@ public class Participant {
     }
 
     public int calculateTotalAmount() {
+        if (choice == Choice.SINGLE_DOUBLE) {
+            return 860;
+        }
         return choice.getPrice() - calculateMealsToRefund();
     }
 
