@@ -62,11 +62,13 @@ namespace Socrates.Tests.RegistrationLibraryTests
                         choice: Choice.Triple,
                         checkin: new CheckTime(
                             DayOfWeek.Thursday,
-                            "21:00"
+                            hour: 21,
+                            min: 0
                         ),
                         checkout: new CheckTime(
                             DayOfWeek.Sunday,
-                            "15:00"
+                            hour: 15,
+                            min: 0
             ));
             //Then
             Check.That(reservation.MissingMeals).IsEqualTo(0);
@@ -106,6 +108,25 @@ namespace Socrates.Tests.RegistrationLibraryTests
             ));
             //Then
             Check.That(reservation.MissingMeals).IsEqualTo(0);
+        }
+
+        [Test]
+        [Ignore("Work In Progress")]
+        public void MichelReservationMissing_1_MealAccordingToChecks()
+        {
+            //Given / When
+            var reservation = new Reservation(
+                        choice: Choice.Twin,
+                        checkin: new CheckTime(
+                            DayOfWeek.Friday,
+                            "08:00"
+                        ),
+                        checkout: new CheckTime(
+                            DayOfWeek.Sunday,
+                            "14:30"
+            ));
+            //Then
+            Check.That(reservation.MissingMeals).IsEqualTo(1);
         }
     }
 }
