@@ -16,9 +16,6 @@ public class Participant {
     }
 
     public int calculateTotalAmount() {
-        if (choice == Choice.SINGLE_DOUBLE) {
-            return 860;
-        }
         return choice.getPrice() - calculateMealsToRefund();
     }
 
@@ -28,10 +25,10 @@ public class Participant {
 
     public int calculateNbMealsRetrieved() {
         if (hasTwoMealsToRefund()) {
-            return 2;
+            return isNotAlone() ? 2 * 2 : 2;
         }
         if (hasOneMealToRefund()) {
-           return  1;
+           return  isNotAlone() ? 2 * 1 : 1;
         }
         return 0;
     }
@@ -41,6 +38,10 @@ public class Participant {
     }
 
     public boolean hasTwoMealsToRefund() {
-        return checkIn.arrivalDayIsFriday() && checkOut.departureDayIsSaturday();
+        return (checkIn.arrivalDayIsFriday() && checkOut.departureDayIsSaturday());
+    }
+
+    public boolean isNotAlone() {
+        return choice == Choice.SINGLE_DOUBLE;
     }
 }
