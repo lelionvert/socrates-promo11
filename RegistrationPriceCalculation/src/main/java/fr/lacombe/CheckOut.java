@@ -8,4 +8,8 @@ public class CheckOut {
         this.departureDay = departureDay;
         this.departureHour = departureHour;
     }
+
+    public String getDepartureDay() {
+        return departureDay;
+    }
 }
