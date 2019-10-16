@@ -41,5 +41,22 @@ namespace Socrates.Tests.RegistrationLibraryTests
 
             Check.That((int)reservation.Choice).IsEqualTo(240);
         }
+
+        [Test]
+        public void ReservationMissingNoMealAccordingToChecks()
+        {
+            //Given / Then
+            var reservation = new Reservation(
+                        choice: Choice.Triple,
+                        checkin: new CheckTime(
+                            DayOfWeek.Thursday,
+                            "21:00"
+                        ),
+                        checkout: new CheckTime(
+                            DayOfWeek.Sunday,
+                            "15:00"
+            ));
+            Check.That(reservation.MissingMeals).IsEqualTo(0);
+        }
     }
 }
