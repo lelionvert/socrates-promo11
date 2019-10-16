@@ -11,6 +11,46 @@ namespace Socrates.Tests.RegistrationLibraryTests
     class PriceCalculatorTests
     {
         [Test]
+        public void SingleRoomPrice()
+        {
+            Check.That(
+                new PriceCalculator().TotalAmount(
+                    new Reservation(Choice.Single)
+                    )
+                ).IsEqualTo(610);
+        }
+
+        [Test]
+        public void TwinRoomPrice()
+        {
+            Check.That(
+                new PriceCalculator().TotalAmount(
+                    new Reservation(Choice.Twin)
+                    )
+                ).IsEqualTo(510);
+        }
+
+        [Test]
+        public void TripleRoomPrice()
+        {
+            Check.That(
+                new PriceCalculator().TotalAmount(
+                    new Reservation(Choice.Triple)
+                    )
+                ).IsEqualTo(410);
+        }
+
+        [Test]
+        public void NoAccommodationPrice()
+        {
+            Check.That(
+                new PriceCalculator().TotalAmount(
+                    new Reservation(Choice.NoAccommodation)
+                    )
+                ).IsEqualTo(240);
+        }
+
+        [Test]
         public void PriceCalculatorReturnsSingleReservationTotalAmount()
         {
             var priceCalculator = new PriceCalculator();

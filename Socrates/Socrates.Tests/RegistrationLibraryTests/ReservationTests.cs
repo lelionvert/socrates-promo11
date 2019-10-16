@@ -10,36 +10,5 @@ namespace Socrates.Tests.RegistrationLibraryTests
     [TestFixture]
     class ReservationTests
     {
-        [Test]
-        public void SingleRoomPrice()
-        {
-            var reservation = new Reservation(Choice.Single);
-
-            Check.That(reservation.ChoiceAmount).IsEqualTo(610);
-        }
-
-        [Test]
-        public void TwinRoomPrice()
-        {
-            var reservation = new Reservation(Choice.Twin);
-
-            Check.That(reservation.ChoiceAmount).IsEqualTo(510);
-        }
-
-        [Test]
-        public void TripleRoomPrice()
-        {
-            var reservation = new Reservation(Choice.Triple);
-
-            Check.That(reservation.ChoiceAmount).IsEqualTo(410);
-        }
-
-        [Test]
-        public void NoAccommodationPrice()
-        {
-            var reservation = new Reservation(Choice.NoAccommodation);
-
-            Check.That(reservation.ChoiceAmount).IsEqualTo(240);
-        }
     }
 }
