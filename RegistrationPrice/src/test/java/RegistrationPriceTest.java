@@ -26,6 +26,17 @@ class RegistrationPriceTest {
     }
 
     @Test
+    void validate_scenario_1_sarah() {
+        String checkInDateThursday = "2019-10-17 22h00";
+        String checkOutDateSunday = "2019-10-20 14h30";
+
+        CheckedInParticipant sarah = CheckedInParticipantBuilder.create(checkInDateThursday, checkOutDateSunday,
+                ChoiceAccommodation.TWIN);
+
+        assertThat(SocratesRegistrationPricer.chargesTotalAmount(sarah)).isEqualTo(510);
+    }
+
+    @Test
     void validate_scenario_2_Michel() {
         String checkInDateFriday = "2019-10-18 08h00";
         String checkOutDateSunday = "2019-10-20 14h30";
