@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -27,9 +26,8 @@ class RegistrationPriceTest {
     }
 
     @Test
-    @Disabled("WIP")
     void validate_scenario_2_Michel() {
-        String checkInDateFriday = "2019-10-18 8h00";
+        String checkInDateFriday = "2019-10-18 08h00";
         String checkOutDateSunday = "2019-10-20 14h30";
 
         CheckedInParticipant michel = CheckedInParticipantBuilder.create(checkInDateFriday, checkOutDateSunday,

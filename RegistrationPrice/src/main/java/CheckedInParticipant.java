@@ -26,6 +26,10 @@ public class CheckedInParticipant {
         return checkOutDateTime;
     }
 
+    public DayOfWeek getCheckInDay() {
+        return checkInDateTime.getDayOfWeek();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -48,9 +52,5 @@ public class CheckedInParticipant {
                 ", checkOutDateTime=" + checkOutDateTime +
                 ", choice=" + choice +
                 '}';
-    }
-
-    public DayOfWeek getCheckInDay() {
-        return checkInDateTime.getDayOfWeek();
     }
 }
