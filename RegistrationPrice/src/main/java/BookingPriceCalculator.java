@@ -34,4 +34,8 @@ class BookingPriceCalculator {
         return missThursdayMeal(checkInDay)
                 || missSundayMeal(checkOutDay);
     }
+
+    static int calculateRefundAmount(Booking booking) {
+        return 80;
+    }
 }

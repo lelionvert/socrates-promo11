@@ -55,5 +55,16 @@ class BookingPriceCalculatorTest {
                 .isEqualTo(80);
     }
 
+    @Test
+    void calculate_refund_amount_should_return_80_when_miss_one_meal_and_two_persons() {
+        String checkInDateThursday = "2020-10-22 17h45";
+        String checkOutDateSaturday = "2020-10-24 14h00";
 
+        Booking booking = BookingHelper.create(checkInDateThursday,
+                checkOutDateSaturday,
+                ChoiceAccommodation.SINGLE_DOUBLE);
+
+        assertThat(BookingPriceCalculator.calculateRefundAmount(booking))
+                .isEqualTo(80);
+    }
 }
