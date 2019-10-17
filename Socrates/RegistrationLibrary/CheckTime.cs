@@ -1,28 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RegistrationLibrary
 {
     public class CheckTime
     {
-        private DayOfWeek dayOfWeek;
+        public DayOfWeek DayOfWeek
+        {
+            get;
+            private set;
+        }
         private string time;
-        private int hour;
+        public int Hour
+        {
+            get;
+            private set;
+        }
         private int min;
         private string date;
         private DayOfWeek friday;
 
         public CheckTime(DayOfWeek dayOfWeek, string time)
         {
-            this.dayOfWeek = dayOfWeek;
+            DayOfWeek = dayOfWeek;
             this.time = time;
         }
 
         public CheckTime(DayOfWeek dayOfWeek, int hour, int min)
         {
-            this.dayOfWeek = dayOfWeek;
-            this.hour = hour;
+            DayOfWeek = dayOfWeek;
+            Hour = hour;
             this.min = min;
         }
 
@@ -30,7 +36,7 @@ namespace RegistrationLibrary
         {
             this.date = date;
             this.friday = friday;
-            this.hour = hour;
+            Hour = hour;
             this.min = min;
         }
     }
